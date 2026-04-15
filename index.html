@@ -1198,25 +1198,33 @@ if (data.error) {
 }
 
 const raw = data.content[0].text;
-const clean = raw
-  .replace(/```json|```/g, '')
-  .replace(/[\u2018\u2019]/g, "'")
-  .replace(/[\u201C\u201D]/g, '"')
-  .trim();
 
-let parsed;
-try {
-  parsed = JSON.parse(clean);
-} catch(e) {
-  const match = clean.match(/\{[\s\S]*\}/);
-  if (match) {
-    parsed = JSON.parse(match[0]);
-  } else {
-    throw new Error('Could not parse AI response as JSON');
+function safeParseJSON(str) {
+  // Extract JSON object
+  const match = str.match(/\{[\s\S]*\}/);
+  const jsonStr = match ? match[0] : str;
+  
+  // Fix smart quotes
+  let fixed = jsonStr
+    .replace(/[\u2018\u2019]/g, '\\"')
+    .replace(/[\u201C\u201D]/g, '\\"')
+    .replace(/```json|```/g, '');
+
+  // Fix unescaped apostrophes inside string values
+  fixed = fixed.replace(/"([^"]*)"/g, function(match, p1) {
+    return '"' + p1.replace(/'/g, "\\'") + '"';
+  });
+
+  try {
+    return JSON.parse(fixed);
+  } catch(e) {
+    // Last resort - remove all single quotes
+    const cleaned = fixed.replace(/'/g, ' ');
+    return JSON.parse(cleaned);
   }
 }
 
-const result = parsed;
+const result = safeParseJSON(raw);
 
     setTimeout(() => {
       document.getElementById('loadingState').classList.remove('active');
