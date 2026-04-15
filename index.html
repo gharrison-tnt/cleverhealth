@@ -1191,40 +1191,9 @@ CRITICAL: Never use apostrophes or single quotes inside string values. Use "do n
     clearInterval(stepInterval);
     steps.forEach(s => document.getElementById(s).classList.add('done'));
 
-   const data = await response.json();
-
-if (data.error) {
-  throw new Error(data.error + (data.details ? ' — ' + JSON.stringify(data.details) : ''));
-}
-
-const raw = data.content[0].text;
-
-function safeParseJSON(str) {
-  // Extract JSON object
-  const match = str.match(/\{[\s\S]*\}/);
-  const jsonStr = match ? match[0] : str;
-  
-  // Fix smart quotes
-  let fixed = jsonStr
-    .replace(/[\u2018\u2019]/g, '\\"')
-    .replace(/[\u201C\u201D]/g, '\\"')
-    .replace(/```json|```/g, '');
-
-  // Fix unescaped apostrophes inside string values
-  fixed = fixed.replace(/"([^"]*)"/g, function(match, p1) {
-    return '"' + p1.replace(/'/g, "\\'") + '"';
-  });
-
-  try {
-    return JSON.parse(fixed);
-  } catch(e) {
-    // Last resort - remove all single quotes
-    const cleaned = fixed.replace(/'/g, ' ');
-    return JSON.parse(cleaned);
-  }
-}
-
-const result = safeParseJSON(raw);
+  const data = await response.json();
+if (data.error) throw new Error(data.error);
+const result = data.result;
 
     setTimeout(() => {
       document.getElementById('loadingState').classList.remove('active');
