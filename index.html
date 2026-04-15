@@ -1179,12 +1179,8 @@ async function runAnalysis() {
       },
       body: JSON.stringify({
        model: 'claude-sonnet-4-5',
-        max_tokens: 4000,
-       system: `You are a CS intelligence engine for Cloverleaf.ai, a GovTech sales intelligence platform.
-You analyze call transcripts to score customer health across 4 pillars: Champion Strength, ROI Story, Adoption, and Engagement.
-You ALWAYS respond with valid JSON only. No markdown, no preamble, no explanation outside the JSON structure.
-CRITICAL: Never use apostrophes or single quotes inside string values. Use "do not" instead of "don't", "they are" instead of "they're", "we are" instead of "we're". This is essential for valid JSON.`,
-        messages: [{ role: 'user', content: prompt }]
+        max_tokens: 2500,
+      system: `You are a CS intelligence engine for Cloverleaf.ai. Respond with valid JSON only. No markdown, no backticks, no code fences. No apostrophes or single quotes inside string values - use "do not" instead of "don't". Return only the raw JSON object.`,
       })
     });
 
