@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CleverHealth — Account Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D1117;
+    --ink-soft: #3D4451;
+    --ink-muted: #7A8394;
+    --paper: #F7F5F0;
+    --paper-warm: #EFECE5;
+    --paper-card: #FFFFFF;
+    --rule: #E2DED6;
+    --accent: #1A4D3E;
+    --accent-light: #2D7A62;
+    --accent-glow: rgba(26,77,62,0.08);
+    --amber: #C4711A;
+    --amber-bg: #FEF3E2;
+    --red: #B03A2E;
+    --red-bg: #FDEDEB;
+    --green: #1A6B3C;
+    --green-bg: #E8F5EE;
+    --yellow: #8A6A00;
+    --yellow-bg: #FEF9E7;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.06);
+    --radius: 12px;
+    --radius-sm: 6px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--ink);
+    padding: 0 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-mark {
+    width: 28px; height: 28px;
+    background: var(--accent-light);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-mark svg { width: 16px; height: 16px; }
+  .logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: -0.3px;
+  }
+  .logo-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-left: 4px;
+    padding-left: 12px;
+    border-left: 1px solid rgba(255,255,255,0.15);
+  }
+  .header-badge {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.06);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  /* LAYOUT */
+  .main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* INTRO */
+  .intro {
+    margin-bottom: 40px;
+  }
+  .intro-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 10px;
+  }
+  .intro h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .intro h1 em {
+    font-style: italic;
+    color: var(--accent-light);
+  }
+  .intro p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* INTAKE FORM */
+  .intake-card {
+    background: var(--paper-card);
+    border-radius: var(--radius);
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+  .intake-section {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .intake-section:last-child { border-bottom: none; }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .step-num {
+    width: 24px; height: 24px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-label h3 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .section-label p {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  /* TRANSCRIPT AREA */
+  .transcript-wrap {
+    position: relative;
+  }
+  .transcript-area {
+    width: 100%;
+    min-height: 160px;
+    max-height: 280px;
+    padding: 16px;
+    border: 1.5px solid var(--rule);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    resize: vertical;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .transcript-area:focus { border-color: var(--accent-light); }
+  .transcript-area::placeholder { color: var(--ink-muted); font-style: italic; }
+
+  .transcript-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  .btn-ghost {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-ghost:hover {
+    background: var(--paper-warm);
+    border-color: var(--ink-muted);
+    color: var(--ink);
+  }
+  .char-count {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-left: auto;
+  }
+
+  /* CONTEXT FIELDS */
+  .fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .field-group.full { grid-column: 1 / -1; }
+  label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+  }
+  .field-hint {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+  input[type="text"], input[type="number"], input[type="date"], select {
+    padding: 10px 14px;
+    border: 1.5px solid var(--rule);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--paper);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  input:focus, select:focus { border-color: var(--accent-light); }
+  input::placeholder { color: var(--ink-muted); }
+
+  .fields-trio {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ANALYZE BUTTON */
+  .analyze-wrap {
+    padding: 24px 32px;
+    background: var(--paper-warm);
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .btn-analyze {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 32px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-analyze:hover { background: var(--accent); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+  .btn-analyze:active { transform: translateY(0); }
+  .btn-analyze:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .analyze-note {
+    font-size: 12px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+
+  /* LOADING */
+  .loading-state {
+    display: none;
+    padding: 60px 32px;
+    text-align: center;
+  }
+  .loading-state.active { display: block; }
+  .loading-spinner {
+    width: 36px; height: 36px;
+    border: 3px solid var(--rule);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 20px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .loading-step {
+    font-size: 13px;
+    color: var(--ink-muted);
+    opacity: 0;
+    transform: translateY(6px);
+    transition: all 0.4s;
+  }
+  .loading-step.active { opacity: 1; transform: translateY(0); color: var(--ink-soft); }
+  .loading-step.done { opacity: 0.4; }
+
+  /* RESULTS */
+  #results { display: none; }
+  #results.active { display: block; animation: fadeUp 0.5s ease; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  .results-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    gap: 16px;
+  }
+  .results-meta h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    letter-spacing: -0.3px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .results-meta p {
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+  .customer-type-badge {
+    background: var(--ink);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* SCORE GRID */
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .score-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+  }
+  .score-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .score-card.green::before { background: var(--green); }
+  .score-card.yellow::before { background: var(--amber); }
+  .score-card.red::before { background: var(--red); }
+
+  .score-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .score-card-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .score-card.green .score-card-value { color: var(--green); }
+  .score-card.yellow .score-card-value { color: var(--amber); }
+  .score-card.red .score-card-value { color: var(--red); }
+
+  .score-card-status {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  .green .score-card-status { background: var(--green-bg); color: var(--green); }
+  .yellow .score-card-status { background: var(--amber-bg); color: var(--amber); }
+  .red .score-card-status { background: var(--red-bg); color: var(--red); }
+
+  .score-card-note {
+    font-size: 11px;
+    color: var(--ink-muted);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  /* MATURITY BAR */
+  .maturity-card {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+  }
+  .maturity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .maturity-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .maturity-stage-badge {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    background: var(--accent-glow);
+    color: var(--accent);
+    border: 1px solid rgba(26,77,62,0.2);
+  }
+  .maturity-stages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .maturity-stage {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1.5px solid var(--rule);
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .maturity-stage.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .maturity-stage.past {
+    background: var(--green-bg);
+    border-color: var(--green);
+  }
+  .maturity-stage-num {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 3px;
+  }
+  .maturity-stage.active .maturity-stage-num { opacity: 0.8; }
+  .maturity-stage-name {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .maturity-description {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* CONTENT SECTIONS */
+  .result-section {
+    background: var(--paper-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+  }
+  .result-section-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-warm);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .result-section-icon {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .result-section-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .result-section-body {
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  /* ATTACK PLAN */
+  .attack-plan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .attack-step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+  }
+  .attack-step-num {
+    width: 26px; height: 26px;
+    background: var(--ink);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .attack-step-content { flex: 1; }
+  .attack-step-action {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .attack-step-detail {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .attack-step-meta {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .meta-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.03em;
+  }
+  .meta-owner { background: #E8F0FE; color: #1A56B0; }
+  .meta-deadline { background: var(--amber-bg); color: var(--amber); }
+  .meta-priority { background: var(--red-bg); color: var(--red); }
+
+  /* ROI BUILDER */
+  .roi-box {
+    background: var(--green-bg);
+    border: 1px solid rgba(26,107,60,0.2);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* PROJECTION */
+  .projection-box {
+    background: var(--red-bg);
+    border: 1px solid rgba(176,58,46,0.2);
+    border-radius: 8px;
+    padding: 16px 18px;
+    font-size: 14px;
+    color: var(--red);
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  .projection-box.positive {
+    background: var(--green-bg);
+    border-color: rgba(26,107,60,0.2);
+    color: var(--green);
+  }
+
+  /* DIG DEEPER */
+  .dig-deeper-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .dig-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .dig-icon {
+    color: var(--amber);
+    font-size: 14px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  /* CHAMPION EVIDENCE */
+  .evidence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .evidence-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 13px;
+    padding: 10px 12px;
+    background: var(--paper);
+    border-radius: 6px;
+    border-left: 3px solid var(--rule);
+  }
+  .evidence-item.positive { border-left-color: var(--green); }
+  .evidence-item.negative { border-left-color: var(--red); }
+  .evidence-item.neutral { border-left-color: var(--amber); }
+
+  /* KEY PLAYERS */
+  .players-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .player-card {
+    padding: 12px 14px;
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+  }
+  .player-role {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .player-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .player-status {
+    font-size: 11px;
+    color: var(--ink-muted);
+  }
+  .player-card.missing {
+    border-style: dashed;
+    opacity: 0.7;
+  }
+  .player-card.missing .player-name { color: var(--red); font-style: italic; }
+
+  /* RESET BUTTON */
+  .reset-wrap {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .btn-reset {
+    font-size: 13px;
+    color: var(--ink-muted);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-reset:hover { color: var(--ink); border-color: var(--ink-soft); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 11px;
+    color: var(--ink-muted);
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (max-width: 680px) {
+    .score-grid { grid-template-columns: repeat(2, 1fr); }
+    .maturity-stages { grid-template-columns: repeat(2, 1fr); }
+    .fields-trio { grid-template-columns: 1fr 1fr; }
+    .fields-row { grid-template-columns: 1fr; }
+    .players-grid { grid-template-columns: 1fr; }
+    .intro h1 { font-size: 28px; }
+    .main { padding: 32px 16px 60px; }
+    .header { padding: 0 20px; }
+    .intake-section { padding: 20px; }
+    .analyze-wrap { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 2L14 5.5V10.5L8 14L2 10.5V5.5L8 2Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="8" cy="8" r="2" fill="white"/>
+      </svg>
+    </div>
+    <span class="logo-text">CleverHealth</span>
+    <span class="logo-sub">by Cloverleaf CS</span>
+  </div>
+  <span class="header-badge">Account Intelligence · Beta</span>
+</header>
+
+<main class="main">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <div class="intro-eyebrow">CS Account Intelligence</div>
+    <h1>See what the transcript<br><em>already knows</em> about your account.</h1>
+    <p>Paste a call transcript, add four data points, and CleverHealth scores your account across four pillars — surfacing champion signals, maturity stage, and a sequenced attack plan the CSM can act on today.</p>
+  </div>
+
+  <!-- INTAKE -->
+  <div class="intake-card" id="intakeCard">
+
+    <!-- TRANSCRIPT -->
+    <div class="intake-section">
+      <div class="section-label">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Call Transcript or Meeting Notes</h3>
+          <p>Paste your most recent QBR, cadence call, or onboarding notes. The AI extracts champion signals, value language, and engagement quality.</p>
+        </div>
+      </div>
+      <div class="transcript-wrap">
+        <textarea class="transcript-area" id="transcript" placeholder="Paste transcript here... e.g. 'CSM: Thanks for joining today. Let's review your pipeline activity from last quarter. Customer: Sure, our VP of Sales actually flagged that we found two opportunities through your alerts last month...'"></textarea>
+        <div class="transcript-actions">
+          <button class="btn-ghost" onclick="loadSampleA()">Load Sample — At Risk</button>
+          <button class="btn-ghost" onclick="loadSampleB()">Load Sample — Healthy</button>
+          <button class="btn-ghost" onclick="loadSampleC()">Load Sample — Ghost Account</button>
+          <span class="char-count" id="charCount">0 characters</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTEXT -->
+    <div class="intake-section">
+      <div class="section-label">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Customer Context</h3>
+          <p>Two plain-language sentences. No dropdown, no category — tell us who they are in your own words.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="field-group">
+          <label>What does this company sell?</label>
+          <input type="text" id="whatTheySell" placeholder="e.g. Public safety technology — CAD systems and dispatch software — to municipal police and fire departments">
+          <span class="field-hint">One sentence. Be specific about vertical and product.</span>
+        </div>
+        <div class="field-group">
+          <label>Who is their primary government buyer?</label>
+          <input type="text" id="whoBuys" placeholder="e.g. City police chiefs, emergency management directors, and county IT administrators">
+          <span class="field-hint">Titles and agency types — this calibrates what 'adoption' and 'ROI' mean for them.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DATA POINTS -->
+    <div class="intake-section">
+      <div class="section-label">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Account Data</h3>
+          <p>Objective inputs only — no opinion fields.</p>
+        </div>
+      </div>
+      <div class="fields-trio">
+        <div class="field-group">
+          <label>Contract Value</label>
+          <select id="contractValue">
+            <option value="">Select range</option>
+            <option value="under30k">Under $30K</option>
+            <option value="30-60k">$30K – $60K</option>
+            <option value="above60k">Above $60K</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Months to Renewal</label>
+          <input type="number" id="monthsToRenewal" placeholder="e.g. 6" min="0" max="24">
+        </div>
+        <div class="field-group">
+          <label>Last Senior Stakeholder Meeting</label>
+          <input type="date" id="lastSeniorMeeting">
+          <span class="field-hint">VP / Director level or above</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANALYZE -->
+    <div class="analyze-wrap">
+      <button class="btn-analyze" id="analyzeBtn" onclick="runAnalysis()">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 6H15L11 9.5L12.5 15L8 11.5L3.5 15L5 9.5L1 6H6L8 1Z" fill="currentColor"/></svg>
+        Analyze Account
+      </button>
+      <p class="analyze-note">Analysis takes 15–25 seconds.<br>All data stays in this session — nothing is stored.</p>
+    </div>
+
+    <!-- LOADING -->
+    <div class="loading-state" id="loadingState">
+      <div class="loading-spinner"></div>
+      <div class="loading-steps">
+        <div class="loading-step" id="step1">Reading transcript for champion signals...</div>
+        <div class="loading-step" id="step2">Scoring engagement quality and value language...</div>
+        <div class="loading-step" id="step3">Assessing adoption and maturity stage...</div>
+        <div class="loading-step" id="step4">Building sequenced attack plan...</div>
+        <div class="loading-step" id="step5">Generating ROI narrative and projections...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results">
+
+    <div class="results-header">
+      <div class="results-meta">
+        <h2 id="resultAccountName">Account Analysis</h2>
+        <p id="resultSubtitle">Scored against 4-pillar framework · Cloverleaf CS Intelligence</p>
+      </div>
+      <div class="customer-type-badge" id="customerTypeBadge">—</div>
+    </div>
+
+    <!-- PILLAR SCORES -->
+    <div class="score-grid" id="scoreGrid">
+      <div class="score-card" id="card-champion">
+        <div class="score-card-label">Champion</div>
+        <div class="score-card-value" id="score-champion">—</div>
+        <div class="score-card-status" id="status-champion">—</div>
+        <div class="score-card-note" id="note-champion"></div>
+      </div>
+      <div class="score-card" id="card-roi">
+        <div class="score-card-label">ROI Story</div>
+        <div class="score-card-value" id="score-roi">—</div>
+        <div class="score-card-status" id="status-roi">—</div>
+        <div class="score-card-note" id="note-roi"></div>
+      </div>
+      <div class="score-card" id="card-adoption">
+        <div class="score-card-label">Adoption</div>
+        <div class="score-card-value" id="score-adoption">—</div>
+        <div class="score-card-status" id="status-adoption">—</div>
+        <div class="score-card-note" id="note-adoption"></div>
+      </div>
+      <div class="score-card" id="card-engagement">
+        <div class="score-card-label">Engagement</div>
+        <div class="score-card-value" id="score-engagement">—</div>
+        <div class="score-card-status" id="status-engagement">—</div>
+        <div class="score-card-note" id="note-engagement"></div>
+      </div>
+    </div>
+
+    <!-- MATURITY -->
+    <div class="maturity-card">
+      <div class="maturity-header">
+        <span class="maturity-title">Customer Maturity</span>
+        <span class="maturity-stage-badge" id="maturityBadge">Stage —</span>
+      </div>
+      <div class="maturity-stages">
+        <div class="maturity-stage" id="mstage-1">
+          <div class="maturity-stage-num">Stage 1</div>
+          <div class="maturity-stage-name">Activated</div>
+        </div>
+        <div class="maturity-stage" id="mstage-2">
+          <div class="maturity-stage-num">Stage 2</div>
+          <div class="maturity-stage-name">Converting</div>
+        </div>
+        <div class="maturity-stage" id="mstage-3">
+          <div class="maturity-stage-num">Stage 3</div>
+          <div class="maturity-stage-name">Embedded</div>
+        </div>
+        <div class="maturity-stage" id="mstage-4">
+          <div class="maturity-stage-num">Stage 4</div>
+          <div class="maturity-stage-name">Expanding</div>
+        </div>
+      </div>
+      <div class="maturity-description" id="maturityDescription"></div>
+    </div>
+
+    <!-- CHAMPION EVIDENCE -->
+    <div class="result-section">
+      <div class="result-section-header">
+        <div class="result-section-icon" style="background:#E8F0FE">👤</div>
+        <span class="result-section-title">Champion Evidence — From Transcript</span>
+      </div>
+      <div class="result-section-body">
+        <div class="evidence-list" id="championEvidence"></div>
+      </div>
+    </div>
+
+    <!-- KEY PLAYERS -->
+    <div class="result-section">
+      <div class="result-section-header">
+        <div class="result-section-icon" style="background:#F3E8FF">🗺️</div>
+        <span class="result-section-title">Key Player Map</span>
+      </div>
+      <div class="result-section-body">
+        <div class="players-grid" id="keyPlayers"></div>
+      </div>
+    </div>
+
+    <!-- ATTACK PLAN -->
+    <div class="result-section">
+      <div class="result-section-header">
+        <div class="result-section-icon" style="background:#FEF3E2">⚡</div>
+        <span class="result-section-title">Sequenced Attack Plan</span>
+      </div>
+      <div class="result-section-body">
+        <div class="attack-plan-list" id="attackPlan"></div>
+      </div>
+    </div>
+
+    <!-- ROI BUILDER -->
+    <div class="result-section">
+      <div class="result-section-header">
+        <div class="result-section-icon" style="background:#E8F5EE">💰</div>
+        <span class="result-section-title">ROI Story Builder</span>
+      </div>
+      <div class="result-section-body">
+        <div class="roi-box" id="roiStory"></div>
+      </div>
+    </div>
+
+    <!-- PROJECTION -->
+    <div class="result-section">
+      <div class="result-section-header">
+        <div class="result-section-icon" style="background:#FDEDEB">🔭</div>
+        <span class="result-section-title">If Nothing Changes</span>
+      </div>
+      <div class="result-section-body">
+        <div class="projection-box" id="projection"></div>
+      </div>
+    </div>
+
+    <!-- DIG DEEPER -->
+    <div class="result-section" id="digDeeperSection">
+      <div class="result-section-header">
+        <div class="result-section-icon" style="background:#FEF9E7">🔍</div>
+        <span class="result-section-title">Dig Deeper — Return With These Answers</span>
+      </div>
+      <div class="result-section-body">
+        <div class="dig-deeper-list" id="digDeeper"></div>
+      </div>
+    </div>
+
+    <div class="reset-wrap">
+      <button class="btn-reset" onclick="resetForm()">← Analyze Another Account</button>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer">
+  CleverHealth · Cloverleaf CS Intelligence · Built for internal use
+</footer>
+
+<script>
+// ── SAMPLE TRANSCRIPTS ──────────────────────────────────────────────────
+
+const samples = {
+  atRisk: `CSM: Thanks for joining today, Jennifer. I appreciate you making time. I wanted to walk through some of the platform updates and check in on how things are going.
+
+Jennifer (Admin): Sure, yeah. It's been a busy quarter. I'll be honest, I'm not sure everyone on the team has been logging in as much as before.
+
+CSM: Got it. Can you tell me more about that? Have there been any issues with the alerts?
+
+Jennifer: I don't think it's an issue exactly. I think people just get busy and it falls off the radar. Our sales reps are pretty heads-down on their current pipeline.
+
+CSM: That makes sense. Have you had a chance to share some of the meeting intelligence reports with the leadership team?
+
+Jennifer: I forwarded a couple to my manager but I'm not sure if they looked at them. Our VP of Sales has been really busy with the end of year push.
+
+CSM: Understood. In terms of the alerts you're receiving, are those coming through for the right territories?
+
+Jennifer: I think so. I haven't heard complaints. I just don't know how much people are acting on them honestly.
+
+CSM: Do you have a sense of whether any deals have come through from Cloverleaf intelligence?
+
+Jennifer: I can't really say. I don't track that separately. That would be a question for the sales team.
+
+CSM: Of course. Let's make sure we get a meeting scheduled with your VP of Sales before the end of the quarter. When does your contract renew?
+
+Jennifer: I think it's in Q2. I'd have to check.
+
+CSM: Perfect. Let's plan to reconnect in a few weeks and I'll send over some materials in the meantime.`,
+
+  healthy: `CSM: Great to see everyone today. Marcus, thanks for pulling Sarah and the team in for this one.
+
+Marcus (VP of Sales): Happy to. Honestly we've been meaning to do a bigger review. Sarah mentioned some numbers I wanted to hear directly.
+
+Sarah (Account Lead): Yeah so I pulled together what I could. We had three opportunities this quarter that we can directly trace back to Cloverleaf alerts — the Riverside County public safety upgrade, the school district in Mesa, and the waterworks project in Tulsa. Riverside is in final stages, the other two are still early but they were deals we wouldn't have known about before RFP.
+
+Marcus: That's the thing — we would have missed Riverside entirely. By the time the RFP went public we were already in conversations with two of their committee members. That's a seven figure deal.
+
+CSM: That's exactly the use case we designed for. How is the broader team using the platform day to day?
+
+Sarah: Most of the AEs are checking it weekly now. We built it into our Monday pipeline review — I pull the top alerts for each territory and we work through them. A couple reps were slow to adopt but once they saw that Riverside came from it they got on board.
+
+Marcus: I want to talk about expanding to the Northeast territory. We've been doing mainly Southwest and Mountain West. Is there a way to layer in state-level tracking too?
+
+CSM: Absolutely — that's exactly what our Insights tool was built for. I can walk you through that today if you want.
+
+Marcus: Yes. And I want to get our new SDR team set up properly too. They should be using this from day one.`,
+
+  ghost: `CSM: Hi, this is the Cloverleaf team. Is this David?
+
+David: Yeah this is David.
+
+CSM: Great, David. I just wanted to check in as we're coming up on your renewal window. How has the platform been working for you?
+
+David: Honestly I haven't had much time to dig into it. Things have been hectic.
+
+CSM: Understood. Are you and your team still receiving the alerts?
+
+David: I get emails I think. I haven't really been on the platform itself in a while.
+
+CSM: Got it. Has anyone else on the team been using it?
+
+David: I don't think so. The sales team we had when we signed up has mostly turned over. We have some new reps but I haven't really onboarded them.
+
+CSM: I see. Would it make sense to schedule a re-onboarding session?
+
+David: Maybe. I'd have to find a time. Things are just really busy right now. Can you just send me an email with the information?
+
+CSM: Of course. I'll send that over. Is there anything specific you'd want us to cover?
+
+David: Not really. Whatever you think is important. I'll forward it to the team.
+
+CSM: One more thing — your contract is up for renewal in about six weeks. Is that something you've had a chance to think about?
+
+David: Six weeks? I didn't realize it was that soon. I'll have to talk to my manager about the budget.`
+};
+
+document.getElementById('transcript').addEventListener('input', function() {
+  document.getElementById('charCount').textContent = this.value.length.toLocaleString() + ' characters';
+});
+
+function loadSampleA() {
+  document.getElementById('transcript').value = samples.atRisk;
+  document.getElementById('whatTheySell').value = 'Emergency communications and CAD software to municipal police and fire departments';
+  document.getElementById('whoBuys').value = 'City police chiefs, fire marshals, and county emergency management directors';
+  document.getElementById('contractValue').value = '30-60k';
+  document.getElementById('monthsToRenewal').value = '4';
+  const d = new Date(); d.setMonth(d.getMonth() - 5);
+  document.getElementById('lastSeniorMeeting').value = d.toISOString().split('T')[0];
+  document.getElementById('charCount').textContent = samples.atRisk.length.toLocaleString() + ' characters';
+}
+function loadSampleB() {
+  document.getElementById('transcript').value = samples.healthy;
+  document.getElementById('whatTheySell').value = 'Infrastructure and environmental services — waste management and water treatment — to county and municipal governments';
+  document.getElementById('whoBuys').value = 'County public works directors, city procurement officers, and sustainability department heads';
+  document.getElementById('contractValue').value = 'above60k';
+  document.getElementById('monthsToRenewal').value = '8';
+  const d = new Date(); d.setDate(d.getDate() - 12);
+  document.getElementById('lastSeniorMeeting').value = d.toISOString().split('T')[0];
+  document.getElementById('charCount').textContent = samples.healthy.length.toLocaleString() + ' characters';
+}
+function loadSampleC() {
+  document.getElementById('transcript').value = samples.ghost;
+  document.getElementById('whatTheySell').value = 'Legal technology and contract management software to city attorneys and municipal legal departments';
+  document.getElementById('whoBuys').value = 'City attorneys, county counsel offices, and procurement administrators';
+  document.getElementById('contractValue').value = 'under30k';
+  document.getElementById('monthsToRenewal').value = '1';
+  const d = new Date(); d.setMonth(d.getMonth() - 9);
+  document.getElementById('lastSeniorMeeting').value = d.toISOString().split('T')[0];
+  document.getElementById('charCount').textContent = samples.ghost.length.toLocaleString() + ' characters';
+}
+
+// ── ANALYSIS ──────────────────────────────────────────────────────────
+
+async function runAnalysis() {
+  const transcript = document.getElementById('transcript').value.trim();
+  const whatTheySell = document.getElementById('whatTheySell').value.trim();
+  const whoBuys = document.getElementById('whoBuys').value.trim();
+  const contractValue = document.getElementById('contractValue').value;
+  const monthsToRenewal = document.getElementById('monthsToRenewal').value;
+  const lastSeniorMeeting = document.getElementById('lastSeniorMeeting').value;
+
+  if (!transcript || transcript.length < 100) {
+    alert('Please paste a call transcript (at least a few exchanges) before analyzing.');
+    return;
+  }
+  if (!whatTheySell || !whoBuys) {
+    alert('Please fill in what this company sells and who their government buyer is.');
+    return;
+  }
+
+  // Calculate days since senior meeting
+  let daysSinceSenior = null;
+  if (lastSeniorMeeting) {
+    const meetingDate = new Date(lastSeniorMeeting);
+    const today = new Date();
+    daysSinceSenior = Math.floor((today - meetingDate) / (1000 * 60 * 60 * 24));
+  }
+
+  document.getElementById('analyzeBtn').disabled = true;
+  document.getElementById('loadingState').classList.add('active');
+  document.getElementById('analyzeBtn').style.display = 'none';
+  document.querySelector('.analyze-note').style.display = 'none';
+
+  // Animate loading steps
+  const steps = ['step1','step2','step3','step4','step5'];
+  let stepIdx = 0;
+  const stepInterval = setInterval(() => {
+    if (stepIdx > 0) document.getElementById(steps[stepIdx-1]).classList.add('done');
+    if (stepIdx < steps.length) {
+      document.getElementById(steps[stepIdx]).classList.add('active');
+      stepIdx++;
+    }
+  }, 1800);
+
+  const prompt = buildPrompt(transcript, whatTheySell, whoBuys, contractValue, monthsToRenewal, daysSinceSenior);
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: `You are a CS intelligence engine for Cloverleaf.ai, a GovTech sales intelligence platform. 
+You analyze call transcripts to score customer health across 4 pillars: Champion Strength, ROI Story, Adoption, and Engagement.
+You ALWAYS respond with valid JSON only. No markdown, no preamble, no explanation outside the JSON structure.`,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+
+    clearInterval(stepInterval);
+    steps.forEach(s => document.getElementById(s).classList.add('done'));
+
+    const data = await response.json();
+    const raw = data.content[0].text;
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const result = JSON.parse(clean);
+
+    setTimeout(() => {
+      document.getElementById('loadingState').classList.remove('active');
+      renderResults(result, whatTheySell, monthsToRenewal);
+    }, 600);
+
+  } catch (err) {
+    clearInterval(stepInterval);
+    document.getElementById('loadingState').classList.remove('active');
+    document.getElementById('analyzeBtn').disabled = false;
+    document.getElementById('analyzeBtn').style.display = 'flex';
+    document.querySelector('.analyze-note').style.display = 'block';
+    alert('Analysis failed. Please check your connection and try again.\n\n' + err.message);
+  }
+}
+
+function buildPrompt(transcript, whatTheySell, whoBuys, contractValue, monthsToRenewal, daysSinceSenior) {
+  return `Analyze this Cloverleaf.ai customer account and return a JSON health assessment.
+
+CUSTOMER CONTEXT:
+- What they sell: ${whatTheySell}
+- Their government buyers: ${whoBuys}
+- Contract value tier: ${contractValue || 'unknown'}
+- Months to renewal: ${monthsToRenewal || 'unknown'}
+- Days since VP/Director-level stakeholder attended a meeting: ${daysSinceSenior !== null ? daysSinceSenior + ' days' : 'unknown'}
+
+TRANSCRIPT:
+${transcript}
+
+CLOVERLEAF PRODUCT CONTEXT FOR SCORING:
+Cloverleaf.ai monitors 30,000+ government organizations, transcribes public meetings with speaker ID, and delivers real-time sales intelligence — early signals before RFPs, decision-maker profiles, sentiment analysis, competitive intel — directly to GovTech vendors' sales teams. ROI is measured in deals sourced from Cloverleaf signals, pipeline influenced, and relationships built before procurement starts. Meaningful adoption means reps are acting on alerts, using meeting intelligence in outreach, and using Speaker ID to track decision-makers — not just receiving email digests.
+
+SCORING FRAMEWORK:
+Pillar weights: Champion (most important) > ROI Story > Adoption > Engagement
+Score each 0-100. Assign green (70+), yellow (40-69), red (0-39).
+Minimum 3 green pillars needed for healthy account status.
+
+CHAMPION — Score based on:
+- Did a VP/Director/C-level sales leader appear in the transcript? (major positive)
+- Did the customer use value language unprompted? (strong signal)
+- Is the relationship single-threaded with admin/ops only? (major negative)
+- Did the customer ask forward-looking questions or challenge the CSM? (positive)
+- Days since senior stakeholder meeting (factor in heavily)
+
+ROI STORY — Score based on:
+- Did the customer mention specific deals, pipeline, or wins tied to Cloverleaf?
+- Can they name a government meeting or alert that led to an opportunity?
+- Is the value framing coming from the customer or only from the CSM?
+- GovTech-specific: sales cycles are long (12-24 months) so early signals acted on count even without closed deals
+
+ADOPTION — Score based on:
+- Are reps actively using the platform or just the admin?
+- Are alerts being acted on or just received?
+- Is the team using intelligence for outreach prep and meeting prep?
+- Is usage diversified across team members or concentrated in one power user?
+- Any mention of team turnover that may have broken adoption
+
+ENGAGEMENT — Score based on:
+- Meeting frequency and quality
+- Customer talk ratio vs CSM talk ratio (passive customer = low score)
+- Tone: forward-looking vs reactive/administrative
+- Whether customer surfaces new use cases or only responds to CSM prompts
+
+MATURITY STAGES:
+1 - Activated: Basic setup, alerts configured, some logins
+2 - Converting: At least one deal sourced from intel, reps acting on signals
+3 - Embedded: Platform part of sales workflow, leadership engaged, CRM integration
+4 - Expanding: New territories/verticals/features being explored, reference-worthy
+
+CUSTOMER ARCHETYPES (pick the most accurate):
+- "The Ghost" — single-threaded admin, no value narrative, renewal at risk
+- "The Friend" — warm relationship but no product adoption, false positive
+- "The Skeptic" — low adoption, theoretical ROI, often a change management issue
+- "The Headless Account" — strong adoption, no business-level champion
+- "The Abandoned Account" — relationship has effectively lapsed at all levels
+- "The Power User" — one super-user but rest of team not engaged
+- "The Expanding Account" — healthy, growing, asking about new capabilities
+- "The Advocate" — champion engaged, ROI documented, reference candidate
+
+Return ONLY this JSON structure, nothing else:
+{
+  "accountName": "string — infer from transcript or use company type",
+  "customerType": "string — one of the archetypes above",
+  "pillars": {
+    "champion": {
+      "score": number,
+      "status": "green|yellow|red",
+      "headline": "string — one sharp sentence on what the transcript reveals",
+      "note": "string — 10 words max for the score card"
+    },
+    "roi": {
+      "score": number,
+      "status": "green|yellow|red",
+      "headline": "string",
+      "note": "string — 10 words max"
+    },
+    "adoption": {
+      "score": number,
+      "status": "green|yellow|red",
+      "headline": "string",
+      "note": "string — 10 words max"
+    },
+    "engagement": {
+      "score": number,
+      "status": "green|yellow|red",
+      "headline": "string",
+      "note": "string — 10 words max"
+    }
+  },
+  "maturity": {
+    "stage": number,
+    "label": "string",
+    "description": "string — 2 sentences explaining current stage and what reaching next stage requires, specific to this customer's vertical"
+  },
+  "championEvidence": [
+    { "type": "positive|negative|neutral", "text": "string — direct evidence from transcript with quote or observation" }
+  ],
+  "keyPlayers": [
+    { "role": "string", "name": "string or 'Unknown'", "status": "string — present/engaged/missing/unclear", "missing": boolean }
+  ],
+  "attackPlan": [
+    {
+      "action": "string — sharp imperative, what to do",
+      "detail": "string — how to do it, specific to this customer's context and vertical",
+      "owner": "string — CSM / Sales / Customer",
+      "deadline": "string — e.g. Within 2 weeks",
+      "priority": boolean
+    }
+  ],
+  "roiStory": "string — draft narrative the CSM can bring to the customer. Frame as a point of view: 'Based on your usage patterns, here is what we estimate you have accessed and what it could mean for your pipeline.' Be specific to their vertical and government buyer types.",
+  "projection": "string — one sentence: what happens to this account in the next 6 months if nothing changes. Be direct and honest.",
+  "projectionPositive": boolean,
+  "digDeeper": [
+    "string — specific question CSM should go find the answer to before the next call"
+  ]
+}`;
+}
+
+// ── RENDER ────────────────────────────────────────────────────────────
+
+function renderResults(data, whatTheySell, monthsToRenewal) {
+  document.getElementById('intakeCard').style.display = 'none';
+  document.getElementById('results').classList.add('active');
+
+  document.getElementById('resultAccountName').textContent = data.accountName || 'Account Analysis';
+  document.getElementById('resultSubtitle').textContent = `${whatTheySell} · ${monthsToRenewal ? monthsToRenewal + ' months to renewal' : 'Renewal date unknown'}`;
+  document.getElementById('customerTypeBadge').textContent = data.customerType || '—';
+
+  // Pillar scores
+  const pillars = ['champion','roi','adoption','engagement'];
+  pillars.forEach(p => {
+    const d = data.pillars[p];
+    const card = document.getElementById(`card-${p}`);
+    card.className = `score-card ${d.status}`;
+    document.getElementById(`score-${p}`).textContent = d.score;
+    document.getElementById(`status-${p}`).textContent = d.status.charAt(0).toUpperCase() + d.status.slice(1);
+    document.getElementById(`note-${p}`).textContent = d.note;
+  });
+
+  // Maturity
+  const stage = data.maturity.stage;
+  document.getElementById('maturityBadge').textContent = `Stage ${stage} — ${data.maturity.label}`;
+  document.getElementById('maturityDescription').textContent = data.maturity.description;
+  for (let i = 1; i <= 4; i++) {
+    const el = document.getElementById(`mstage-${i}`);
+    el.className = 'maturity-stage';
+    if (i < stage) el.classList.add('past');
+    else if (i === stage) el.classList.add('active');
+  }
+
+  // Champion evidence
+  const evList = document.getElementById('championEvidence');
+  evList.innerHTML = '';
+  (data.championEvidence || []).forEach(ev => {
+    const div = document.createElement('div');
+    div.className = `evidence-item ${ev.type}`;
+    const icon = ev.type === 'positive' ? '✓' : ev.type === 'negative' ? '✗' : '–';
+    div.innerHTML = `<span style="font-weight:700;color:${ev.type==='positive'?'var(--green)':ev.type==='negative'?'var(--red)':'var(--amber)'};flex-shrink:0">${icon}</span><span>${ev.text}</span>`;
+    evList.appendChild(div);
+  });
+
+  // Key players
+  const playersEl = document.getElementById('keyPlayers');
+  playersEl.innerHTML = '';
+  (data.keyPlayers || []).forEach(p => {
+    const div = document.createElement('div');
+    div.className = `player-card${p.missing ? ' missing' : ''}`;
+    div.innerHTML = `<div class="player-role">${p.role}</div><div class="player-name">${p.name}</div><div class="player-status">${p.status}</div>`;
+    playersEl.appendChild(div);
+  });
+
+  // Attack plan
+  const planEl = document.getElementById('attackPlan');
+  planEl.innerHTML = '';
+  (data.attackPlan || []).forEach((step, i) => {
+    const div = document.createElement('div');
+    div.className = 'attack-step';
+    div.innerHTML = `
+      <div class="attack-step-num">${i+1}</div>
+      <div class="attack-step-content">
+        <div class="attack-step-action">${step.action}</div>
+        <div class="attack-step-detail">${step.detail}</div>
+        <div class="attack-step-meta">
+          <span class="meta-tag meta-owner">${step.owner}</span>
+          <span class="meta-tag meta-deadline">${step.deadline}</span>
+          ${step.priority ? '<span class="meta-tag meta-priority">High Priority</span>' : ''}
+        </div>
+      </div>`;
+    planEl.appendChild(div);
+  });
+
+  // ROI story
+  document.getElementById('roiStory').textContent = data.roiStory || '';
+
+  // Projection
+  const projEl = document.getElementById('projection');
+  projEl.textContent = data.projection || '';
+  projEl.className = `projection-box${data.projectionPositive ? ' positive' : ''}`;
+
+  // Dig deeper
+  const digEl = document.getElementById('digDeeper');
+  digEl.innerHTML = '';
+  const digItems = data.digDeeper || [];
+  if (digItems.length === 0) {
+    document.getElementById('digDeeperSection').style.display = 'none';
+  } else {
+    (digItems).forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'dig-item';
+      div.innerHTML = `<span class="dig-icon">◆</span><span>${item}</span>`;
+      digEl.appendChild(div);
+    });
+  }
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function resetForm() {
+  document.getElementById('intakeCard').style.display = 'block';
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('analyzeBtn').disabled = false;
+  document.getElementById('analyzeBtn').style.display = 'flex';
+  document.querySelector('.analyze-note').style.display = 'block';
+  document.getElementById('loadingState').classList.remove('active');
+  ['step1','step2','step3','step4','step5'].forEach(s => {
+    const el = document.getElementById(s);
+    el.classList.remove('active','done');
+  });
+  document.getElementById('digDeeperSection').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
