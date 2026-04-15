@@ -1169,11 +1169,18 @@ async function runAnalysis() {
   }, 1800);
 
   const prompt = buildPrompt(transcript, whatTheySell, whoBuys, contractValue, monthsToRenewal, daysSinceSenior);
-
+'x-api-key': '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',
+'anthropic-version': '2023-06-01',
+'anthropic-dangerous-direct-browser-access': 'true',
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': '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',
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
