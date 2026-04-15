@@ -1193,8 +1193,20 @@ CRITICAL: Never use apostrophes or single quotes inside string values. Use "do n
 
   const data = await response.json();
 if (data.error) throw new Error(data.error);
-const result = data.result || data;
-if (!result || !result.pillars) throw new Error('Invalid response structure: ' + JSON.stringify(data).substring(0, 200));
+
+let result = data.result;
+
+if (!result && data.rawText) {
+  const cleaned = data.rawText
+    .replace(/```json\n?/g, '')
+    .replace(/```\n?/g, '')
+    .replace(/[\u2018\u2019]/g, ' ')
+    .replace(/'/g, ' ')
+    .trim();
+  result = JSON.parse(cleaned);
+}
+
+if (!result || !result.pillars) throw new Error('Could not parse result');
 
     setTimeout(() => {
       document.getElementById('loadingState').classList.remove('active');
