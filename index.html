@@ -1187,7 +1187,7 @@ async function runAnalysis() {
     clearInterval(stepInterval);
     steps.forEach(s => document.getElementById(s).classList.add('done'));
 
-  const data = await response.json();
+ const data = await response.json();
 if (data.error) throw new Error(data.error);
 
 let result = data.result;
