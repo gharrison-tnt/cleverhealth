@@ -1177,10 +1177,11 @@ async function runAnalysis() {
         'Content-Type': 'application/json',
        
       },
-      body: JSON.stringify({
-       model: 'claude-sonnet-4-5',
+    body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
         max_tokens: 2500,
-      system: `You are a CS intelligence engine for Cloverleaf.ai. Respond with valid JSON only. No markdown, no backticks, no code fences. No apostrophes or single quotes inside string values - use "do not" instead of "don't". Return only the raw JSON object.`,
+        system: `You are a CS intelligence engine for Cloverleaf.ai. Respond with valid JSON only. No markdown, no backticks, no code fences. No apostrophes or single quotes inside string values - use "do not" instead of "don't". Return only the raw JSON object.`,
+        messages: [{ role: 'user', content: prompt }]
       })
     });
 
