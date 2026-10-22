@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "source": "saved",
+  "generatedAt": "2026-10-15",
+  "accountName": "Crestview Mutual Insurance",
+  "summary": "Adoption is deep and the executive sponsor is engaged, but there is no pre-launch baseline and no outcome measured in claims terms. The sponsor faces a CFO line-by-line review in about 60 days and a cheaper bundled alternative from the core claims vendor.",
+  "indicators": [
+    { "id": "ch.sponsor_engaged", "level": "strong", "basis": "stated", "evidence": "SVP of Claims requested the review, set the agenda, and committed to unblock IT and finance.", "quote": "I can push the IT request. I'll talk to the CIO's chief of staff this week." },
+    { "id": "ch.value_language", "level": "partial", "basis": "stated", "evidence": "Customer describes user satisfaction and dependence, not business value.", "quote": "I had a feeling, but I didn't have an answer." },
+    { "id": "ch.multithreaded", "level": "partial", "basis": "stated", "evidence": "SVP and Director engaged; IT data owners, finance, and the CFO are not.", "quote": "IT does. Specifically a team under the CIO. They're not unfriendly, they're just buried." },
+    { "id": "ch.sponsor_stability", "level": "strong", "basis": "inferred", "evidence": "No sponsor turnover mentioned. The sponsor is under budget pressure but in role. A reporting analyst left in the spring.", "quote": "" },
+    { "id": "roi.objectives_defined", "level": "partial", "basis": "stated", "evidence": "Original business case named cycle time and manual touches; the sponsor now needs cost per claim and adjuster capacity, which were never defined as targets.", "quote": "Something on cost per claim or adjuster capacity, because that's how he thinks." },
+    { "id": "roi.kpis_baselined", "level": "absent", "basis": "stated", "evidence": "No clean pre-launch baseline exists for cycle time.", "quote": "We don't have a clean before." },
+    { "id": "roi.outcomes_evidenced", "level": "absent", "basis": "stated", "evidence": "Reports describe platform activity, not claims outcomes. Subrogation impact is anecdotal.", "quote": "The reports we get from your platform are about the platform." },
+    { "id": "roi.customer_owned", "level": "absent", "basis": "stated", "evidence": "The sponsor could not answer the CFO's question about what the spend delivered.", "quote": "what did we get for the six hundred and eighty thousand we spend on Fieldstone. And I didn't have a good answer." },
+    { "id": "ad.breadth", "level": "strong", "basis": "stated", "evidence": "Roughly 1,100 adjusters, about 85% weekly active.", "quote": "We've got roughly eleven hundred adjusters on it." },
+    { "id": "ad.depth", "level": "strong", "basis": "stated", "evidence": "34 workflows in production, including FNOL routing on every new auto and property claim.", "quote": "If we turned it off tomorrow there would be a riot on the floor." },
+    { "id": "ad.blockers", "level": "strong", "basis": "stated", "evidence": "No adoption blockers raised. The blockers are on measurement, not usage.", "quote": "Yeah, usage isn't the problem." },
+    { "id": "en.cadence", "level": "unknown", "basis": "none", "evidence": "", "quote": "" },
+    { "id": "en.initiative", "level": "strong", "basis": "stated", "evidence": "Sponsor drives the meeting, names three required outputs, and discloses competitive pressure.", "quote": "Three things. A before and after on cycle time for at least one line of business." },
+    { "id": "en.expansion", "level": "partial", "basis": "stated", "evidence": "Commercial lines wants the platform, but the sponsor is holding expansion until value is proven.", "quote": "I'm not expanding something I can't defend." },
+    { "id": "vr.attribution", "level": "absent", "basis": "stated", "evidence": "Neither the sponsor nor finance can attribute any outcome to the investment yet.", "quote": "I need it to come from our data, not your marketing slides." }
+  ],
+  "maturity": { "stage": 2, "rationale": "Core workflows are embedded across the claims floor, but no outcomes are measured against a baseline. Reaching Realizing Value requires a defensible before-and-after in claims terms from Crestview data." },
+  "keyPlayers": [
+    { "name": "Elaine Porter", "title": "SVP, Claims", "role": "Executive sponsor", "side": "customer", "stance": "engaged", "note": "Under CFO pressure; wants a defensible page, not a dinner." },
+    { "name": "Tom Akers", "title": "Director, Claims Operations", "role": "Business owner", "side": "customer", "stance": "engaged", "note": "Can pull subrogation referral data." },
+    { "name": "Not named", "title": "Chief Financial Officer", "role": "Economic buyer", "side": "customer", "stance": "unknown", "missing": true, "note": "Running line-by-line vendor review in about 60 days." },
+    { "name": "Not named", "title": "CIO data team", "role": "Data owner", "side": "customer", "stance": "neutral", "missing": true, "note": "Historical extract request pending since July." },
+    { "name": "Not named", "title": "Finance partner", "role": "Value validator", "side": "customer", "stance": "unknown", "missing": true, "note": "To be assigned by the sponsor." },
+    { "name": "Not named", "title": "Commercial lines leadership", "role": "Expansion stakeholder", "side": "customer", "stance": "engaged", "note": "Interested; on hold by sponsor." }
+  ],
+  "objectives": [
+    { "id": "obj1", "text": "Reduce claims cycle time", "basis": "stated" },
+    { "id": "obj2", "text": "Reduce manual touches per claim", "basis": "stated" },
+    { "id": "obj3", "text": "Lower cost per claim and increase adjuster capacity", "basis": "stated" }
+  ],
+  "kpis": [
+    { "name": "Auto physical damage cycle time", "objective": "obj1", "baseline": null, "target": null, "current": "About 11 days (uncertain)", "measurement": "estimated", "source": "Director recollection", "basis": "stated", "note": "Baseline lost when the analyst who owned the dashboard left." },
+    { "name": "Manual touches per claim", "objective": "obj2", "baseline": null, "target": null, "current": null, "measurement": "not_measured", "source": "Not identified", "basis": "stated", "note": "" },
+    { "name": "Cost per claim", "objective": "obj3", "baseline": null, "target": null, "current": null, "measurement": "not_measured", "source": "Finance (contact to be assigned)", "basis": "stated", "note": "The CFO's lens." },
+    { "name": "Subrogation recovery referrals", "objective": "obj3", "baseline": null, "target": null, "current": "Recovery team reports more referrals; count unknown", "measurement": "not_measured", "source": "Recovery team spreadsheet", "basis": "stated", "note": "Possibly the fastest win to prove." }
+  ],
+  "useCases": [
+    { "name": "First notice of loss routing", "status": "adopted", "evidence": "Touches every new auto and property claim." },
+    { "name": "Subrogation flags", "status": "adopted", "evidence": "Running daily; recovery team reports more referrals." },
+    { "name": "Auto claims document chase", "status": "adopted", "evidence": "Running daily." }
+  ],
+  "risks": [
+    { "text": "CFO line-by-line review in about 60 days with no defensible value story.", "pillar": "roi", "severity": "high", "basis": "stated" },
+    { "text": "Core claims vendor is offering a cheaper bundle claimed to cover 80% of the capability.", "pillar": "roi", "severity": "high", "basis": "stated" },
+    { "text": "Historical data extract has been stuck in the IT queue since July.", "pillar": "roi", "severity": "medium", "basis": "stated" },
+    { "text": "Vendor reporting is platform-centric, so the customer cannot translate it to claims outcomes.", "pillar": "roi", "severity": "medium", "basis": "stated" }
+  ],
+  "opportunities": [
+    { "text": "Subrogation recoveries may be the fastest outcome to prove.", "pillar": "roi", "basis": "stated" },
+    { "text": "Commercial lines expansion once value is defensible.", "pillar": "engagement", "basis": "stated" },
+    { "text": "Sponsor is willing to unblock IT and finance personally.", "pillar": "champion", "basis": "stated" }
+  ],
+  "actions": [
+    { "action": "Run a four-week value assessment in claims terms", "detail": "Deliver the three outputs the sponsor named: a before-and-after on cycle time for one line of business, a cost per claim or capacity view, and a page sourced from Crestview data.", "ownerRole": "CSM", "timeframe": "Start this week; finish within 4 weeks", "priority": "high", "addresses": ["roi.outcomes_evidenced", "roi.kpis_baselined"] },
+    { "action": "Unblock the historical claims extract", "detail": "Sponsor escalates to the CIO's chief of staff; agree a partial extract if a full one cannot land in time.", "ownerRole": "Customer Executive Sponsor", "timeframe": "This week", "priority": "high", "addresses": ["roi.kpis_baselined"] },
+    { "action": "Quantify subrogation referrals", "detail": "Pull the recovery team's referral data before and after go-live and agree a value per recovery with finance.", "ownerRole": "Customer Champion", "timeframe": "Within 2 weeks", "priority": "high", "addresses": ["roi.outcomes_evidenced", "vr.attribution"] },
+    { "action": "Get a named finance partner", "detail": "One hour with finance to use their cost per claim method, so the CFO sees his own numbers.", "ownerRole": "Customer Executive Sponsor", "timeframe": "Within 2 weeks", "priority": "high", "addresses": ["vr.attribution", "ch.multithreaded"] },
+    { "action": "Replace platform reports with claims-outcome reporting", "detail": "Redesign the monthly report around cycle time, touches, and recoveries instead of workflow volumes.", "ownerRole": "Solutions Engineer", "timeframe": "Within 30 days", "priority": "medium", "addresses": ["roi.customer_owned"] },
+    { "action": "Prepare a competitive position against the bundle", "detail": "Document what the bundled alternative would not cover, grounded in Crestview's 34 production workflows.", "ownerRole": "Account Executive", "timeframe": "Before the CFO review", "priority": "medium", "addresses": ["roi.customer_owned"] }
+  ],
+  "valueNarrative": {
+    "statedFacts": [
+      "About 1,100 adjusters use the platform, roughly 85% weekly active.",
+      "34 automated workflows are in production, including FNOL routing on every new auto and property claim.",
+      "Annual spend is $680K.",
+      "No pre-launch cycle time baseline exists; current auto physical damage cycle time is roughly 11 days by recollection."
+    ],
+    "draft": "Crestview's adjusters rely on Fieldstone every day: about 1,100 users, 34 workflows in production, and FNOL routing on every new claim. What we cannot yet show is what that has done to cycle time, touches, or cost per claim, because the pre-launch baseline was lost. Over the next four weeks we will rebuild a before-and-after from Crestview's own claims data, starting with subrogation recoveries.",
+    "caveats": ["No outcome figures are shown until a baseline is rebuilt from Crestview data.", "The 11-day cycle time is an estimate, not a measured value."]
+  },
+  "projection": { "direction": "negative", "text": "If nothing changes, Crestview enters the CFO review without a defensible number and the cheaper bundle becomes the default, putting the March renewal at serious risk despite strong usage." },
+  "missingInformation": [
+    { "question": "What was auto physical damage cycle time before go-live?", "why": "No baseline means no before-and-after.", "relatesTo": "roi.kpis_baselined" },
+    { "question": "How many subrogation referrals and recoveries came from the flags, and what are they worth?", "why": "Likely fastest measurable outcome.", "relatesTo": "roi.outcomes_evidenced" },
+    { "question": "What cost per claim method does finance use?", "why": "The CFO will only trust his own method.", "relatesTo": "vr.attribution" },
+    { "question": "What is the regular meeting cadence with Crestview?", "why": "Not evidenced in this transcript.", "relatesTo": "en.cadence" },
+    { "question": "What exactly does the bundled alternative cover?", "why": "Needed to position against the 80% claim.", "relatesTo": "roi.customer_owned" }
+  ],
+  "assumptions": ["Sponsor assumed stable in role; no turnover mentioned."]
+}

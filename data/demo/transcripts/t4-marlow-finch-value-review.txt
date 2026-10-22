@@ -1,0 +1,70 @@
+FICTIONAL DEMONSTRATION TRANSCRIPT. All people, companies, and figures are invented. This is an illustrative scenario and does not describe any real Adobe customer.
+
+Marlow & Finch (fictional specialty home goods retailer) | Adobe Experience Cloud Value Realization Review
+Participants: Alex Moreno (Value Realization Advisor), Kendra Walsh (Adobe CSM), Olivia Grant (VP, Lifecycle Marketing, Marlow & Finch), Ben Toller (Director, Marketing Analytics, Marlow & Finch), Raj Patel (Engagement Lead, Brightpath Digital, implementation partner)
+
+Alex: Thanks, everyone. The goal today is simple. We're about fourteen months into the program, and I want us to leave with a shared view of what's live, what's measured, and what we can credibly say to Dana and finance. Olivia, can you start with what Dana is asking?
+
+Olivia: Dana's question is always the same. When do we see it in the P&L. She championed this investment with the board, and the board review is in February. She doesn't need everything to be perfect, but she needs a story that finance won't pick apart.
+
+Alex: Got it. Raj, can you give us the delivery picture first?
+
+Raj: Sure. Real-Time CDP is implemented. Online behavioral data and ecommerce orders are flowing into profiles. We're at about eighteen million profiles. Journey Optimizer is live for two journeys: cart abandonment, live since June, and the new customer welcome series, live since August. Post-purchase cross-sell is built and in QA. Loyalty win-back is blocked, because loyalty and in-store POS data still isn't ingested. That's a dependency on the client's POS vendor export.
+
+Kendra: And just for context, the entitlement is twenty-five million profiles, so you're at roughly seventy percent. The usage side looks healthy. The gap is really the store data. Seventy percent of your revenue is in stores, so without POS data the profile is missing most of the customer.
+
+Olivia: That's the frustrating part. Win-back was supposed to be the big one. It's our biggest lever on repeat purchase.
+
+Alex: Can we talk about the objectives we wrote down at the start? I have three. Grow repeat purchase rate from thirty-one percent to thirty-six percent. Grow owned-channel revenue, email and SMS. And reduce retargeting spend by fifteen percent by using better suppression audiences. Is that still right?
+
+Olivia: Yes. Repeat purchase is the one Dana cares about.
+
+Ben: Can I jump in on repeat purchase? The thirty-one percent baseline is solid. That's FY24, from our customer file, finance has seen it. But we don't have a current number. The Customer Journey Analytics workspace that was supposed to track it isn't configured yet, and I can't calculate it cleanly without store transactions tied to profiles.
+
+Raj: CJA configuration is in our last phase, but honestly, with our SOW ending in six weeks, I don't think we finish it plus the POS ingestion. We'd need a change order.
+
+Alex: Okay, let's note that. Olivia, on owned-channel revenue?
+
+Olivia: This is where we have good news. Cart abandonment has driven two point one million in attributed revenue since June. That's on the Journey Optimizer dashboard.
+
+Ben: I have to push back on that, respectfully. That's last-touch attributed. Anyone who got the email and bought within seven days counts. A lot of those people were going to buy anyway. We never set up a holdout group, so we can't say what's incremental. If I put two point one million in front of finance, the first question is "compared to what," and I don't have an answer.
+
+Olivia: I know, I know. But it's not zero, either.
+
+Ben: Agreed. It's not zero. I just don't know what it is.
+
+Kendra: We can set up a holdout on cart abandonment pretty quickly. It's a configuration in the journey, not a rebuild. You'd need to hold back maybe ten percent of eligible customers for six to eight weeks.
+
+Olivia: Holding back during holiday makes me nervous.
+
+Alex: That's a real tradeoff. One option is a smaller holdout, say five percent, starting the first week of January, so we have readable results before the board review. Ben, would that be credible to finance?
+
+Ben: Five percent over six weeks... probably readable for cart abandonment, the volume is high. I'd want finance to agree to the method before we start, not after.
+
+Alex: Agreed. And retargeting spend?
+
+Olivia: We haven't really started on that. The paid media team reports to a different VP, and suppression audiences need their agency to change their setup. It's been on the list.
+
+Alex: So, objective three has no owner on the paid side and no baseline yet.
+
+Olivia: That's fair.
+
+Kendra: One more thing I'd flag. Your team's enablement has been good. Your two journey builders are strong. But they're the only two people who can build in Journey Optimizer. If one leaves, you're stuck.
+
+Olivia: I've been asking for headcount. It's not happening before Q2.
+
+Alex: Okay. Let me play back what I'm hearing, and correct me. Delivery is real: CDP is in place and two journeys are live. But the value story has three gaps. We can't show repeat purchase movement because CJA and POS data aren't in place. We have attributed revenue, but no incremental measurement. And the media efficiency objective hasn't started. Dana needs a credible story by February.
+
+Olivia: That's right. Painfully right.
+
+Ben: I'd add, we also need to agree who owns measurement. Right now it's sort of me, sort of Raj's team, sort of the dashboard.
+
+Alex: That's important. Proposal: Ben owns the measurement framework, with Kendra and me supporting. Raj, can you scope a change order for POS ingestion and CJA? And Olivia, can you get fifteen minutes with Dana in the next two weeks so she hears the plan from us before the board prep starts?
+
+Olivia: I can get Dana. She'll want to know what it costs.
+
+Raj: I'll have the change order estimate by next Friday.
+
+Ben: I'll write up the holdout method for finance.
+
+Kendra: And I'll look at whether we can get a third person trained on journey building through our enablement program.

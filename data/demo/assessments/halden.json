@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "source": "saved",
+  "generatedAt": "2026-10-15",
+  "accountName": "Halden Freight Systems",
+  "summary": "Rollout is live in three of four regions with strong usage, and the customer's own TMS data shows dwell time and on-time pickup improving. The open items are the Canada SSO blocker and turning operational gains into a finance-approved dollar figure before the January COO readout.",
+  "indicators": [
+    { "id": "ch.sponsor_engaged", "level": "strong", "basis": "stated", "evidence": "VP of Network Operations attended, framed the COO readout, and asked for it to be scheduled.", "quote": "Sam, put the COO readout on my calendar for the second week of January." },
+    { "id": "ch.value_language", "level": "strong", "basis": "stated", "evidence": "Sponsor ties results to shipper scorecards without prompting.", "quote": "That's what our shippers measure us on. Two of our biggest accounts have mentioned it in their quarterly reviews with us. Unprompted." },
+    { "id": "ch.multithreaded", "level": "strong", "basis": "stated", "evidence": "VP sponsor, Director-level operational owner, and regional leaders are all involved; regional teams extend workflows themselves.", "quote": "Priya's my point on all of this." },
+    { "id": "ch.sponsor_stability", "level": "strong", "basis": "inferred", "evidence": "No turnover or reorganization mentioned for the sponsor or champion. Assumed stable, not confirmed.", "quote": "" },
+    { "id": "roi.objectives_defined", "level": "strong", "basis": "stated", "evidence": "Objectives are dock dwell time and on-time pickup, both tied to how shippers evaluate Halden.", "quote": "And that's the number I care about, the on-time pickup." },
+    { "id": "roi.kpis_baselined", "level": "strong", "basis": "stated", "evidence": "Pre-go-live baselines exist for dwell time (2.6 hours) and on-time pickup (88%) from the customer's TMS.", "quote": "average dock dwell time was two point six hours in the quarter before go-live" },
+    { "id": "roi.outcomes_evidenced", "level": "partial", "basis": "stated", "evidence": "Measured improvements from the customer's TMS, but the customer flags lighter volume as a possible factor and the dollar value is not finance-approved.", "quote": "September and October were lighter volume than the baseline quarter. So some of the dwell improvement could be volume." },
+    { "id": "roi.customer_owned", "level": "strong", "basis": "stated", "evidence": "The sponsor wants to present the results to the COO himself and insists on customer data.", "quote": "I don't want to walk in with a number finance will throw out." },
+    { "id": "ad.breadth", "level": "partial", "basis": "stated", "evidence": "Live in three of four regions, 31 of 44 facilities. Canada not yet live.", "quote": "Dock scheduling automation is live in three of the four regions" },
+    { "id": "ad.depth", "level": "strong", "basis": "stated", "evidence": "Core workflows in daily use; Midwest team extended the exception workflow on its own.", "quote": "the Midwest team has basically taken over the exception workflow and made it their own" },
+    { "id": "ad.blockers", "level": "partial", "basis": "stated", "evidence": "Canada SSO group mapping has been failing for three weeks; likely pushes Canada to January. One regional leader finds two screens cumbersome.", "quote": "The SSO integration with their identity provider is still failing on group mapping." },
+    { "id": "en.cadence", "level": "unknown", "basis": "none", "evidence": "", "quote": "" },
+    { "id": "en.initiative", "level": "strong", "basis": "stated", "evidence": "Customer sets priorities, makes the January call for Canada, and requests a new capability.", "quote": "I'd rather do January cleanly than rush it in during peak." },
+    { "id": "en.expansion", "level": "strong", "basis": "stated", "evidence": "Sponsor asked to scope the yard management module for Gulf yards.", "quote": "The yard management module. We've had a lot of trouble with trailer visibility in the Gulf yards. Is that something we could pilot?" },
+    { "id": "vr.attribution", "level": "partial", "basis": "stated", "evidence": "Shippers recognize the service improvement, but finance has not approved the cost-per-dwell-hour figure needed for a dollar value.", "quote": "Our finance team has a rough number for what an hour of dwell costs us, but they haven't signed off on using it." }
+  ],
+  "maturity": { "stage": 3, "rationale": "Outcomes are measured against baselines in customer data and the sponsor is taking them to the COO. Reaching Expanding requires Canada live, a finance-approved dollar value, and a scoped yard management pilot." },
+  "keyPlayers": [
+    { "name": "Marcus Bell", "title": "VP, Network Operations", "role": "Executive sponsor", "side": "customer", "stance": "engaged", "note": "Owns the COO readout. Handling regional resistance personally." },
+    { "name": "Priya Raman", "title": "Director, Operations Systems", "role": "Champion and operational owner", "side": "customer", "stance": "engaged", "note": "Owns data, Canada escalation, and year-over-year comparison." },
+    { "name": "Ray (surname not given)", "title": "Southeast regional leader", "role": "Regional user leader", "side": "customer", "stance": "neutral", "note": "Finds two screens cumbersome; region still improved." },
+    { "name": "Not named", "title": "Canada IT lead", "role": "Technical dependency", "side": "customer", "stance": "unknown", "note": "New in role; SSO ticket may be with the wrong person." },
+    { "name": "Not named", "title": "Chief Operating Officer", "role": "Economic buyer", "side": "customer", "stance": "unknown", "missing": true, "note": "Will see results in January. Success criteria unknown." },
+    { "name": "Not named", "title": "Finance partner", "role": "Value validator", "side": "customer", "stance": "unknown", "missing": true, "note": "Must approve cost per dwell hour." }
+  ],
+  "objectives": [
+    { "id": "obj1", "text": "Reduce dock dwell time across the network", "basis": "stated" },
+    { "id": "obj2", "text": "Improve on-time pickup performance for shippers", "basis": "stated" }
+  ],
+  "kpis": [
+    { "name": "Average dock dwell time", "objective": "obj1", "baseline": "2.6 hours (quarter before go-live)", "target": null, "current": "1.9 hours (last 90 days, three live regions)", "measurement": "measured", "source": "Halden TMS", "basis": "stated", "note": "Recent volume lighter than baseline quarter." },
+    { "name": "On-time pickup rate", "objective": "obj2", "baseline": "88%", "target": null, "current": "93%", "measurement": "measured", "source": "Halden TMS", "basis": "stated", "note": "" },
+    { "name": "Dollar value of dwell-hour reduction", "objective": "obj1", "baseline": null, "target": null, "current": null, "measurement": "not_measured", "source": "Finance cost-per-dwell-hour (not yet approved)", "basis": "stated", "note": "Required for the COO readout." }
+  ],
+  "useCases": [
+    { "name": "Dock scheduling automation", "status": "adopted", "evidence": "Live in 31 of 44 facilities across three regions." },
+    { "name": "Missed-appointment exception workflow", "status": "adopted", "evidence": "Live since September in all three regions; extended by Midwest team." },
+    { "name": "Canada region rollout", "status": "blocked", "evidence": "SSO group mapping failing; planned for January." }
+  ],
+  "risks": [
+    { "text": "Canada go-live slips to January because of the SSO blocker and the November 15 peak freeze.", "pillar": "adoption", "severity": "medium", "basis": "stated" },
+    { "text": "Part of the dwell improvement may be lower volume, which would weaken the COO story if not controlled for.", "pillar": "roi", "severity": "medium", "basis": "stated" },
+    { "text": "No finance-approved dollar value yet for the January readout.", "pillar": "roi", "severity": "medium", "basis": "stated" },
+    { "text": "Regional pushback on usability could spread if the screen fix does not land.", "pillar": "adoption", "severity": "low", "basis": "stated" }
+  ],
+  "opportunities": [
+    { "text": "Yard management pilot for Gulf yards after Canada is live, no earlier than February.", "pillar": "engagement", "basis": "stated" },
+    { "text": "January COO readout puts results in front of the economic buyer.", "pillar": "champion", "basis": "stated" },
+    { "text": "Shippers raising the improvement unprompted makes Halden a strong reference candidate.", "pillar": "roi", "basis": "inferred" }
+  ],
+  "actions": [
+    { "action": "Escalate the Canada SSO ticket", "detail": "Confirm the right Canada IT owner and get the group-mapping issue resolved by November 1, or lock January as the go-live.", "ownerRole": "Customer Champion", "timeframe": "This week", "priority": "high", "addresses": ["ad.blockers", "ad.breadth"] },
+    { "action": "Control the dwell comparison for volume", "detail": "Compare the last 90 days with the same quarter last year so the improvement holds up in the COO readout.", "ownerRole": "CSM", "timeframe": "Within 2 weeks", "priority": "high", "addresses": ["roi.outcomes_evidenced"] },
+    { "action": "Get finance to approve cost per dwell hour", "detail": "Book 30 minutes with Halden finance to agree the figure and method before any dollar value is shown.", "ownerRole": "CSM", "timeframe": "Before mid-December", "priority": "high", "addresses": ["vr.attribution"] },
+    { "action": "Set explicit targets for both KPIs", "detail": "Agree target dwell time and on-time pickup rates for FY27 so progress can be tracked, not just reported.", "ownerRole": "Customer Executive Sponsor", "timeframe": "At the January readout", "priority": "medium", "addresses": ["roi.kpis_baselined"] },
+    { "action": "Scope yard management without starting a pilot", "detail": "Solutions engineer scopes Gulf yard visibility; pilot start no earlier than February, after Canada.", "ownerRole": "Solutions Engineer", "timeframe": "By end of December", "priority": "medium", "addresses": ["en.expansion"] },
+    { "action": "Ship the screen fix and close the loop with the Southeast region", "detail": "Share the next-release fix with Priya and confirm it addresses the regional concern.", "ownerRole": "Delivery Lead", "timeframe": "Next release", "priority": "low", "addresses": ["ad.breadth"] }
+  ],
+  "valueNarrative": {
+    "statedFacts": [
+      "Average dock dwell time fell from 2.6 hours to 1.9 hours in the three live regions (Halden TMS).",
+      "On-time pickup rose from 88% to 93% in the same regions (Halden TMS).",
+      "412 of 480 licensed users are weekly active; 31 of 44 facilities are live.",
+      "Two major shipper accounts raised the improvement in their own reviews."
+    ],
+    "draft": "In the three live regions, Halden's own TMS data shows average dock dwell time down from 2.6 to 1.9 hours and on-time pickup up from 88% to 93%. Two of Halden's largest shippers have noticed without being asked. Before this goes to the COO, we will control for lighter recent volume with a year-over-year comparison and use a cost-per-dwell-hour figure approved by Halden finance.",
+    "caveats": ["No dollar value is shown until finance approves the method.", "Recent volume was lighter than the baseline quarter."]
+  },
+  "projection": { "direction": "positive", "text": "If nothing changes, Halden renews and is a strong expansion candidate, provided Canada goes live cleanly and the COO readout lands with finance-approved numbers." },
+  "missingInformation": [
+    { "question": "What is the regular meeting cadence with Halden, and has it held?", "why": "Engagement cadence is not evidenced in this transcript.", "relatesTo": "en.cadence" },
+    { "question": "What targets does Halden want for dwell time and on-time pickup?", "why": "Baselines and current values exist, but no targets.", "relatesTo": "roi.kpis_baselined" },
+    { "question": "What cost per dwell hour will finance accept?", "why": "Needed for any dollar value.", "relatesTo": "vr.attribution" },
+    { "question": "How do the last 90 days compare with the same quarter last year?", "why": "Controls for volume differences.", "relatesTo": "roi.outcomes_evidenced" },
+    { "question": "What does the COO need to see to support renewal and expansion?", "why": "Economic buyer criteria are unknown.", "relatesTo": "ch.sponsor_engaged" }
+  ],
+  "assumptions": ["Sponsor and champion are assumed stable; no turnover was mentioned."]
+}

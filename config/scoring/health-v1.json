@@ -1,0 +1,386 @@
+{
+  "id": "health-v1",
+  "label": "Four-Pillar Customer Health",
+  "levels": {
+    "strong": 100,
+    "partial": 55,
+    "absent": 15
+  },
+  "basisConfidence": {
+    "stated": 1,
+    "account": 1,
+    "inferred": 0.5,
+    "none": 0
+  },
+  "thresholds": {
+    "green": 70,
+    "yellow": 40
+  },
+  "pillars": [
+    {
+      "id": "champion",
+      "label": "Champion Strength",
+      "weight": 0.35,
+      "unknownPolicy": "absent",
+      "indicators": [
+        {
+          "id": "ch.sponsor_engaged",
+          "label": "Executive sponsor engaged",
+          "definition": "A customer executive with budget authority is actively involved: attends, asks questions, or makes commitments.",
+          "source": "transcript",
+          "weight": 1.5
+        },
+        {
+          "id": "ch.value_language",
+          "label": "Customer speaks to value",
+          "definition": "Customer stakeholders describe business value in their own words, unprompted by the vendor.",
+          "source": "transcript",
+          "weight": 1
+        },
+        {
+          "id": "ch.multithreaded",
+          "label": "Multi-threaded relationship",
+          "definition": "The relationship spans several stakeholders and levels, not a single admin or operator.",
+          "source": "transcript",
+          "weight": 1
+        },
+        {
+          "id": "ch.sponsor_stability",
+          "label": "Sponsor stability",
+          "definition": "No recent or pending departure, reorganization, or ownership gap affecting the sponsor or champion.",
+          "source": "transcript",
+          "weight": 1.25
+        },
+        {
+          "id": "ch.senior_recency",
+          "label": "Recent executive contact",
+          "definition": "Days since the customer executive sponsor (VP or above, or the named sponsor) last engaged directly with the vendor team.",
+          "source": "account",
+          "weight": 1,
+          "rule": {
+            "field": "daysSinceExecContact",
+            "bands": [
+              {
+                "max": 45,
+                "level": "strong"
+              },
+              {
+                "max": 90,
+                "level": "partial"
+              },
+              {
+                "level": "absent"
+              }
+            ],
+            "evidenceTemplate": "{value} days since the executive sponsor last engaged."
+          }
+        }
+      ]
+    },
+    {
+      "id": "roi",
+      "label": "ROI Narrative",
+      "weight": 0.3,
+      "unknownPolicy": "absent",
+      "indicators": [
+        {
+          "id": "roi.objectives_defined",
+          "label": "Business objectives defined",
+          "definition": "Specific business objectives for the investment are named and agreed by the customer.",
+          "source": "transcript",
+          "weight": 1
+        },
+        {
+          "id": "roi.kpis_baselined",
+          "label": "KPIs with baselines",
+          "definition": "Measurable KPIs exist with a pre-investment baseline the customer accepts.",
+          "source": "transcript",
+          "weight": 1
+        },
+        {
+          "id": "roi.outcomes_evidenced",
+          "label": "Outcomes evidenced",
+          "definition": "Specific, measured outcomes are attributed to the solution, with a named source.",
+          "source": "transcript",
+          "weight": 1.25
+        },
+        {
+          "id": "roi.customer_owned",
+          "label": "Customer owns the story",
+          "definition": "The value story is told by the customer, not only by the vendor.",
+          "source": "transcript",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": "adoption",
+      "label": "Adoption",
+      "weight": 0.2,
+      "unknownPolicy": "exclude",
+      "indicators": [
+        {
+          "id": "ad.breadth",
+          "label": "Breadth of use",
+          "definition": "Usage spans the intended teams, regions, or user groups rather than a single power user.",
+          "source": "transcript",
+          "weight": 1
+        },
+        {
+          "id": "ad.depth",
+          "label": "Core use cases in workflow",
+          "definition": "Priority use cases are live and embedded in day-to-day work; outputs are acted on.",
+          "source": "transcript",
+          "weight": 1.25
+        },
+        {
+          "id": "ad.blockers",
+          "label": "No material blockers",
+          "definition": "Strong means no unresolved technical or organizational blockers to the next adoption milestone.",
+          "source": "transcript",
+          "weight": 0.75
+        },
+        {
+          "id": "ad.utilization",
+          "label": "License utilization",
+          "definition": "Share of licensed or entitled capacity in active use, from product telemetry.",
+          "source": "account",
+          "weight": 1,
+          "rule": {
+            "field": "utilizationPct",
+            "bands": [
+              {
+                "min": 70,
+                "level": "strong"
+              },
+              {
+                "min": 40,
+                "level": "partial"
+              },
+              {
+                "level": "absent"
+              }
+            ],
+            "evidenceTemplate": "{value}% of licensed or entitled capacity in active use."
+          }
+        }
+      ]
+    },
+    {
+      "id": "engagement",
+      "label": "Engagement",
+      "weight": 0.15,
+      "unknownPolicy": "exclude",
+      "indicators": [
+        {
+          "id": "en.cadence",
+          "label": "Healthy meeting cadence",
+          "definition": "Regular meetings happen as planned; few cancellations or long gaps.",
+          "source": "transcript",
+          "weight": 1
+        },
+        {
+          "id": "en.initiative",
+          "label": "Customer drives the agenda",
+          "definition": "The customer raises needs, challenges the vendor, and talks more than they listen.",
+          "source": "transcript",
+          "weight": 1
+        },
+        {
+          "id": "en.expansion",
+          "label": "Forward-looking interest",
+          "definition": "The customer explores new teams, use cases, or capabilities.",
+          "source": "transcript",
+          "weight": 0.75
+        }
+      ]
+    }
+  ],
+  "overall": {
+    "healthyRule": "At least 3 green pillars and no red pillars",
+    "atRiskRule": "Champion or ROI red, or 2 or more red pillars",
+    "renewalWindowMonths": 6
+  },
+  "archetypes": [
+    {
+      "id": "expanding",
+      "label": "The Expanding Account",
+      "description": "Healthy, growing, asking about new capabilities.",
+      "when": {
+        "overall": [
+          "Healthy"
+        ],
+        "indicator": {
+          "en.expansion": [
+            "strong"
+          ]
+        }
+      }
+    },
+    {
+      "id": "advocate",
+      "label": "The Advocate",
+      "description": "Champion engaged, ROI documented, reference candidate.",
+      "when": {
+        "allPillars": [
+          "green"
+        ],
+        "pillarMin": {
+          "roi": 80
+        }
+      }
+    },
+    {
+      "id": "abandoned",
+      "label": "The Abandoned Account",
+      "description": "Relationship has effectively lapsed at all levels.",
+      "when": {
+        "pillar": {
+          "champion": [
+            "red"
+          ],
+          "adoption": [
+            "red"
+          ],
+          "engagement": [
+            "red"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ghost",
+      "label": "The Ghost",
+      "description": "Single-threaded, no value narrative, renewal at risk.",
+      "when": {
+        "pillar": {
+          "champion": [
+            "red"
+          ],
+          "roi": [
+            "red"
+          ]
+        }
+      }
+    },
+    {
+      "id": "headless",
+      "label": "The Headless Account",
+      "description": "Real usage and results, but no business-level champion holding it.",
+      "when": {
+        "pillar": {
+          "champion": [
+            "red"
+          ],
+          "adoption": [
+            "green",
+            "yellow"
+          ]
+        }
+      }
+    },
+    {
+      "id": "unproven",
+      "label": "The Unproven Investment",
+      "description": "Heavy, healthy usage with no measured business outcome behind it.",
+      "when": {
+        "pillar": {
+          "adoption": [
+            "green"
+          ],
+          "roi": [
+            "red",
+            "yellow"
+          ]
+        }
+      }
+    },
+    {
+      "id": "stalled",
+      "label": "The Stalled Rollout",
+      "description": "Implementation blockers are holding back activation and the value story.",
+      "when": {
+        "pillar": {
+          "adoption": [
+            "yellow",
+            "red"
+          ],
+          "roi": [
+            "red",
+            "yellow"
+          ]
+        },
+        "indicator": {
+          "ad.blockers": [
+            "absent",
+            "partial"
+          ]
+        }
+      }
+    },
+    {
+      "id": "friend",
+      "label": "The Friend",
+      "description": "Warm relationship but little adoption. A false positive.",
+      "when": {
+        "pillar": {
+          "engagement": [
+            "green"
+          ],
+          "adoption": [
+            "red"
+          ]
+        }
+      }
+    },
+    {
+      "id": "skeptic",
+      "label": "The Skeptic",
+      "description": "Low adoption and theoretical ROI. Often a change management issue.",
+      "when": {
+        "pillar": {
+          "adoption": [
+            "red"
+          ],
+          "roi": [
+            "red",
+            "yellow"
+          ]
+        }
+      }
+    },
+    {
+      "id": "power_user",
+      "label": "The Power User",
+      "description": "One super-user carries the account; the wider team is not engaged.",
+      "when": {
+        "indicator": {
+          "ad.breadth": [
+            "absent"
+          ],
+          "ad.depth": [
+            "strong",
+            "partial"
+          ]
+        }
+      }
+    },
+    {
+      "id": "steady",
+      "label": "The Steady Account",
+      "description": "Generally healthy with specific gaps to close.",
+      "when": {
+        "overall": [
+          "Healthy",
+          "Watch"
+        ]
+      }
+    },
+    {
+      "id": "mixed",
+      "label": "Mixed Signals",
+      "description": "No clear pattern. Validate the gaps before acting.",
+      "when": {}
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "cleverhealth",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CleverHealth: Customer Intelligence & Value Realization",
+  "scripts": {
+    "test": "node tests/validate.mjs"
+  }
+}

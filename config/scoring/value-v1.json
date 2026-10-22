@@ -1,0 +1,72 @@
+{
+  "id": "value-v1",
+  "label": "Value Realization",
+  "thresholds": {
+    "green": 70,
+    "yellow": 40
+  },
+  "absentScore": 15,
+  "dimensions": [
+    {
+      "id": "vr.objectives",
+      "label": "Objectives defined",
+      "weight": 0.15,
+      "method": "objectives",
+      "definition": "Business objectives are named and each one has at least one KPI with a baseline or target."
+    },
+    {
+      "id": "vr.baselines",
+      "label": "Baselines established",
+      "weight": 0.2,
+      "method": "kpiBaselines",
+      "definition": "Share of KPIs with a pre-investment baseline."
+    },
+    {
+      "id": "vr.activation",
+      "label": "Use-case activation",
+      "weight": 0.25,
+      "method": "useCaseActivation",
+      "definition": "Priority use cases live or adopted, weighted by status.",
+      "statusWeights": {
+        "adopted": 1,
+        "live": 0.8,
+        "in_progress": 0.35,
+        "planned": 0.1,
+        "blocked": 0.1
+      }
+    },
+    {
+      "id": "vr.measurement",
+      "label": "Outcomes measured",
+      "weight": 0.25,
+      "method": "kpiMeasurement",
+      "definition": "Share of KPIs with a measured current value. Estimates count partially.",
+      "measurementWeights": {
+        "measured": 1,
+        "estimated": 0.45,
+        "not_measured": 0
+      }
+    },
+    {
+      "id": "vr.attribution",
+      "label": "Value acknowledged",
+      "weight": 0.15,
+      "method": "indicator",
+      "levels": {
+        "strong": 100,
+        "partial": 55,
+        "absent": 15
+      },
+      "definition": "Customer executives or finance accept the measured value as credible and attributable to the investment."
+    }
+  ],
+  "quadrant": {
+    "split": 60,
+    "labels": {
+      "highHealth_highValue": "Proven partnership",
+      "highHealth_lowValue": "Relationship ahead of value",
+      "lowHealth_highValue": "Value at risk of going unclaimed",
+      "lowHealth_lowValue": "Critical intervention"
+    }
+  }
+}

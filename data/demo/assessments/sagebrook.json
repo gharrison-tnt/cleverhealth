@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "source": "saved",
+  "generatedAt": "2026-10-15",
+  "accountName": "Sagebrook Health Partners",
+  "summary": "The denial prevention workflows have a measured result in finance's own reporting, but the executive sponsor left six weeks ago and no business owner is named for a contract the interim CFO is reviewing. Front-end adoption is falling and the new stakeholder feels the tool was bought without her.",
+  "indicators": [
+    { "id": "ch.sponsor_engaged", "level": "absent", "basis": "stated", "evidence": "The sponsor left; the VP role is unfilled; the interim CFO has no relationship with the vendor.", "quote": "Since Linda left, the interim CFO's office is reviewing every contract that renews in the next two quarters." },
+    { "id": "ch.value_language", "level": "partial", "basis": "stated", "evidence": "The operational champion speaks strongly to value; the business stakeholder does not.", "quote": "Which is crazy, because this is the one tool I'd fight for." },
+    { "id": "ch.multithreaded", "level": "partial", "basis": "stated", "evidence": "A manager-level champion and a Director who is not yet bought in. No executive.", "quote": "But I'm a manager, I can't just book the CFO." },
+    { "id": "ch.sponsor_stability", "level": "absent", "basis": "stated", "evidence": "Sponsor departed; contract owner field is blank; the Director has not agreed to take ownership.", "quote": "Linda was the owner. Now it's, I guess, a blank." },
+    { "id": "roi.objectives_defined", "level": "partial", "basis": "stated", "evidence": "Denial prevention is the clear objective, but no formal target was mentioned.", "quote": "when we launched the denial prevention workflows, our initial denial rate was eleven point eight percent" },
+    { "id": "roi.kpis_baselined", "level": "strong", "basis": "stated", "evidence": "Denial rate baseline of 11.8% from monthly revenue cycle reports that finance receives.", "quote": "That's from the revenue cycle reports, the ones finance gets every month." },
+    { "id": "roi.outcomes_evidenced", "level": "strong", "basis": "stated", "evidence": "Denial rate measured at 8.9% last month and under 9% for three months, in finance's own report.", "quote": "Last month it was eight point nine. It's been under nine for three months now." },
+    { "id": "roi.customer_owned", "level": "partial", "basis": "stated", "evidence": "The champion owns the story; the business stakeholder and executives do not.", "quote": "And someone telling me what my team gets out of it. Not what revenue cycle gets." },
+    { "id": "ad.breadth", "level": "partial", "basis": "stated", "evidence": "Back-office revenue cycle use is steady; patient access logins are down about a third since summer.", "quote": "Patient access logins are down about a third since the summer." },
+    { "id": "ad.depth", "level": "strong", "basis": "stated", "evidence": "Denial prevention workflows are embedded in revenue cycle operations.", "quote": "The back-office revenue cycle side is steady." },
+    { "id": "ad.blockers", "level": "absent", "basis": "stated", "evidence": "New front-end staff were never trained, and the workflows depend on how they enter data.", "quote": "with turnover, a lot of my new staff were never trained on it" },
+    { "id": "en.cadence", "level": "absent", "basis": "stated", "evidence": "The QBR was cancelled twice; no full review since spring.", "quote": "our QBR got cancelled twice this year, so we haven't had a full review since spring" },
+    { "id": "en.initiative", "level": "partial", "basis": "stated", "evidence": "The champion is proactive; the Director attended mainly because of procurement.", "quote": "I'm here partly because Nate asked me to be, and partly because I got an email from procurement" },
+    { "id": "en.expansion", "level": "unknown", "basis": "none", "evidence": "", "quote": "" },
+    { "id": "vr.attribution", "level": "partial", "basis": "stated", "evidence": "The denial rate is finance's own number, but the dollar estimate is unvalidated and no executive has acknowledged it.", "quote": "Finance hasn't looked at my math, but the denial rate itself is their number." }
+  ],
+  "maturity": { "stage": 3, "rationale": "A measured outcome exists in finance's own reporting, but leadership recognition was lost with the sponsor's departure and front-end adoption is slipping. Holding this stage depends on a named owner and an executive who has seen the result." },
+  "keyPlayers": [
+    { "name": "Linda (surname not given)", "title": "Former VP, Revenue Cycle", "role": "Former executive sponsor", "side": "customer", "stance": "departed", "missing": true, "note": "Left about six weeks ago; was the contract owner." },
+    { "name": "Nate Alvarez", "title": "Revenue Cycle Manager", "role": "Operational champion", "side": "customer", "stance": "engaged", "note": "Built the program with Linda; cannot reach the CFO directly." },
+    { "name": "Monica Hale", "title": "Director, Patient Access", "role": "Potential interim owner", "side": "customer", "stance": "neutral", "note": "Open to ownership if the training issue is fixed; checking with her manager." },
+    { "name": "Greg (surname not given)", "title": "Interim CFO", "role": "Economic buyer", "side": "customer", "stance": "unknown", "note": "In cost-cutting mode; responds to money, not features." },
+    { "name": "Not named", "title": "VP, Revenue Cycle (open role)", "role": "Future sponsor", "side": "customer", "stance": "unknown", "missing": true, "note": "Role not yet filled." }
+  ],
+  "objectives": [
+    { "id": "obj1", "text": "Reduce claim denial rate", "basis": "stated" },
+    { "id": "obj2", "text": "Recover revenue lost to denials", "basis": "inferred" }
+  ],
+  "kpis": [
+    { "name": "Claim denial rate", "objective": "obj1", "baseline": "11.8% (at launch)", "target": null, "current": "8.9% (last month; under 9% for three months)", "measurement": "measured", "source": "Monthly revenue cycle reports (finance)", "basis": "stated", "note": "" },
+    { "name": "Claim value not denied (annualized)", "objective": "obj2", "baseline": null, "target": null, "current": "About $1.1M per year (champion's estimate)", "measurement": "estimated", "source": "Champion's calculation; not validated by finance", "basis": "stated", "note": "Label as an estimate in all materials." }
+  ],
+  "useCases": [
+    { "name": "Denial prevention workflows (back office)", "status": "adopted", "evidence": "Steady usage in revenue cycle." },
+    { "name": "Front-end registration and eligibility steps", "status": "live", "evidence": "Live, but patient access usage is down about a third." }
+  ],
+  "risks": [
+    { "text": "No named business owner, with procurement requiring one by mid-November.", "pillar": "champion", "severity": "high", "basis": "stated" },
+    { "text": "Interim CFO is in cut-what-you-can mode and has no relationship with the vendor.", "pillar": "champion", "severity": "high", "basis": "stated" },
+    { "text": "Renewal in January, about three months away.", "pillar": "champion", "severity": "high", "basis": "stated" },
+    { "text": "Untrained front-end staff could erode the denial result over time.", "pillar": "adoption", "severity": "medium", "basis": "inferred" },
+    { "text": "No full review since spring.", "pillar": "engagement", "severity": "medium", "basis": "stated" }
+  ],
+  "opportunities": [
+    { "text": "Finance already owns the denial rate number, so the core result is credible.", "pillar": "roi", "basis": "stated" },
+    { "text": "Registration error reduction could be a win for the patient access team.", "pillar": "roi", "basis": "inferred" },
+    { "text": "The Director can likely get 15 minutes with the interim CFO.", "pillar": "champion", "basis": "stated" }
+  ],
+  "actions": [
+    { "action": "Get 15 minutes with the interim CFO", "detail": "Champion asks the Director to request the slot; lead with finance's own denial rate trend and present the dollar figure clearly as an estimate pending validation.", "ownerRole": "Customer Champion", "timeframe": "Before mid-November", "priority": "high", "addresses": ["ch.sponsor_engaged", "vr.attribution"] },
+    { "action": "Secure a named interim owner", "detail": "Support the Director's conversation with her manager. Remove the training objection first so she can say yes.", "ownerRole": "CSM", "timeframe": "Within 2 weeks", "priority": "high", "addresses": ["ch.sponsor_stability"] },
+    { "action": "Fix front-end training without pulling staff off the phones", "detail": "Turn on in-workflow guides for patient access and deliver a short training plan this week.", "ownerRole": "CSM", "timeframe": "This week", "priority": "high", "addresses": ["ad.blockers", "ad.breadth"] },
+    { "action": "Validate the dollar estimate with finance", "detail": "Walk finance through the champion's method so the $1.1M can be stated as validated or replaced.", "ownerRole": "CSM", "timeframe": "Before the CFO meeting", "priority": "high", "addresses": ["vr.attribution"] },
+    { "action": "Bring vendor executive cover", "detail": "Offer a vendor executive for the CFO conversation to signal accountability, not to sell.", "ownerRole": "Vendor Executive Sponsor", "timeframe": "Before mid-November", "priority": "medium", "addresses": ["ch.multithreaded"] },
+    { "action": "Reset the review cadence", "detail": "Book a short monthly review with the Director and champion through renewal.", "ownerRole": "CSM", "timeframe": "Within 2 weeks", "priority": "medium", "addresses": ["en.cadence"] }
+  ],
+  "valueNarrative": {
+    "statedFacts": [
+      "Denial rate fell from 11.8% at launch to 8.9% last month, and has been under 9% for three months (finance's revenue cycle reports).",
+      "The champion estimates about $1.1M per year in claims not denied; finance has not validated this."
+    ],
+    "draft": "Since launch, Sagebrook's denial rate has fallen from 11.8% to 8.9% and has held under 9% for three months. That figure comes from the revenue cycle reports finance already receives. Our working estimate of the dollar impact is about $1.1M a year, which we will validate with finance before relying on it.",
+    "caveats": ["The $1.1M figure is an unvalidated estimate."]
+  },
+  "projection": { "direction": "negative", "text": "If nothing changes, the contract goes into a cost-cutting review with no owner and no executive who has seen the result, and a measurable win is at real risk of non-renewal in January." },
+  "missingInformation": [
+    { "question": "Who will be the named business owner, and when?", "why": "Procurement requires one by mid-November.", "relatesTo": "ch.sponsor_stability" },
+    { "question": "Did front-end registration errors fall after launch?", "why": "Would give the patient access team its own reason to support renewal.", "relatesTo": "roi.customer_owned" },
+    { "question": "Does finance accept the method behind the $1.1M estimate?", "why": "The dollar figure is unvalidated.", "relatesTo": "vr.attribution" },
+    { "question": "What target denial rate does Sagebrook want?", "why": "No target was stated.", "relatesTo": "roi.objectives_defined" },
+    { "question": "Is there any interest in additional use cases?", "why": "Expansion signals are not evidenced.", "relatesTo": "en.expansion" }
+  ],
+  "assumptions": ["The dollar objective is inferred from the champion's estimate, not a stated business objective."]
+}

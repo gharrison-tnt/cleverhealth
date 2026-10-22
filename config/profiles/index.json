@@ -1,0 +1,16 @@
+{
+  "default": "default-b2b-saas",
+  "profiles": [
+    { "id": "default-b2b-saas", "path": "config/profiles/default-b2b-saas.json" },
+    { "id": "martech-adobe-example", "path": "config/profiles/martech-adobe-example.json" },
+    { "id": "legacy-cloverleaf", "path": "config/profiles/legacy-cloverleaf.json", "hidden": true }
+  ],
+  "scoring": {
+    "health": "config/scoring/health-v1.json",
+    "value": "config/scoring/value-v1.json"
+  },
+  "demo": {
+    "accounts": "data/demo/accounts.json",
+    "asOf": "2026-10-15"
+  }
+}

@@ -1,0 +1,17 @@
+CSM: Great to see everyone today. Marcus, thanks for pulling Sarah and the team in for this one.
+
+Marcus (VP of Sales): Happy to. Honestly we've been meaning to do a bigger review. Sarah mentioned some numbers I wanted to hear directly.
+
+Sarah (Account Lead): Yeah so I pulled together what I could. We had three opportunities this quarter that we can directly trace back to Cloverleaf alerts — the Riverside County public safety upgrade, the school district in Mesa, and the waterworks project in Tulsa. Riverside is in final stages, the other two are still early but they were deals we wouldn't have known about before RFP.
+
+Marcus: That's the thing — we would have missed Riverside entirely. By the time the RFP went public we were already in conversations with two of their committee members. That's a seven figure deal.
+
+CSM: That's exactly the use case we designed for. How is the broader team using the platform day to day?
+
+Sarah: Most of the AEs are checking it weekly now. We built it into our Monday pipeline review — I pull the top alerts for each territory and we work through them. A couple reps were slow to adopt but once they saw that Riverside came from it they got on board.
+
+Marcus: I want to talk about expanding to the Northeast territory. We've been doing mainly Southwest and Mountain West. Is there a way to layer in state-level tracking too?
+
+CSM: Absolutely — that's exactly what our Insights tool was built for. I can walk you through that today if you want.
+
+Marcus: Yes. And I want to get our new SDR team set up properly too. They should be using this from day one.

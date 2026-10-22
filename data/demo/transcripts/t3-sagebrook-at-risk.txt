@@ -1,0 +1,62 @@
+FICTIONAL DEMONSTRATION TRANSCRIPT. All people, companies, and figures are invented.
+
+Sagebrook Health Partners | Account Check-in
+Participants: Riley Chen (CSM, Fieldstone Systems), Nate Alvarez (Revenue Cycle Manager, Sagebrook), Monica Hale (Director, Patient Access, Sagebrook)
+
+Riley: Thanks for making this work. I know we've had to move it a couple of times. Monica, I'm really glad you could join. I don't think we've met properly.
+
+Monica: We haven't. I'll be honest, I'm here partly because Nate asked me to be, and partly because I got an email from procurement asking who owns this contract. And I wasn't sure.
+
+Riley: That's helpful to know. Can you tell me more about the procurement email?
+
+Monica: Since Linda left, the interim CFO's office is reviewing every contract that renews in the next two quarters. Yours is one of them. They want a business owner listed on each one. Linda was the owner. Now it's, I guess, a blank.
+
+Nate: Which is crazy, because this is the one tool I'd fight for.
+
+Riley: Nate, say more.
+
+Nate: So when we launched the denial prevention workflows, our initial denial rate was eleven point eight percent. That's from the revenue cycle reports, the ones finance gets every month. Last month it was eight point nine. It's been under nine for three months now. I did a back of the envelope a while ago and figured that's somewhere around a million one in claims that didn't get denied over the year. Finance hasn't looked at my math, but the denial rate itself is their number.
+
+Riley: That's a big result. Monica, have you seen those numbers?
+
+Monica: Some of them. Nate showed me. I believe it. My concern is different. My team does the front end, registration and eligibility. The workflows depend on my team entering things a certain way. And frankly, with turnover, a lot of my new staff were never trained on it. I've seen usage drop on my side.
+
+Riley: That matches what we see. Patient access logins are down about a third since the summer. The back-office revenue cycle side is steady.
+
+Monica: Right. So from where I sit, it's another system my people have to learn, it was bought before I got here, and nobody asked me.
+
+Nate: That's fair. Linda drove the whole thing. She and I built it, honestly.
+
+Riley: Monica, I hear that. Can I ask what would make this feel less like something that was done to your team?
+
+Monica: Training that doesn't take people off the phones for half a day. And someone telling me what my team gets out of it. Not what revenue cycle gets.
+
+Riley: That's a reasonable ask. We have shorter in-workflow guides we haven't turned on for you. I'm also wondering whether registration errors dropped, because that would be your team's win.
+
+Nate: I think they did, actually. The front-end edits... I'd have to look.
+
+Riley: On the contract. Is there anyone above you both who'd naturally be the owner now that Linda's gone?
+
+Monica: There's the new VP of Revenue Cycle role, but it's not filled. The interim CFO, Greg, is making the decisions in the meantime. I've met him once. He's very much in "cut what you can" mode.
+
+Riley: Would it be useful for us to get in front of Greg before the review, with Nate's numbers?
+
+Nate: Yes. But I'm a manager, I can't just book the CFO.
+
+Monica: I could probably get fifteen minutes. If the story is about money, he'll listen. If it's about software features, he won't.
+
+Riley: Understood. And I'll be transparent, our QBR got cancelled twice this year, so we haven't had a full review since spring. That's partly on us.
+
+Nate: It's partly on everything being on fire since Linda left.
+
+Riley: When does the review with procurement wrap up?
+
+Monica: I think they want owners named by mid-November. The contract renews in January.
+
+Riley: Okay. So, as next steps, I'll draft a one-page summary with the denial numbers, and flag that the dollar figure is Nate's estimate until finance validates it. Monica, would you be open to being listed as the interim owner while the VP role is open?
+
+Monica: Let me think about it. I'm not saying no. I need to talk to my boss first, and I want the training issue fixed before I put my name on it.
+
+Riley: That's fair. I'll come back with a training plan this week.
+
+Nate: And I'll find the registration error numbers.

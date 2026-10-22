@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "source": "saved",
+  "generatedAt": "2026-10-15",
+  "accountName": "Marlow & Finch",
+  "summary": "Technical delivery is real: the CDP is in place and two journeys are live. But the value story has three gaps: repeat purchase cannot be measured without POS data and analytics configuration, revenue is last-touch attributed with no holdout, and the media efficiency objective has not started. The CMO needs a credible story for the February board review.",
+  "indicators": [
+    { "id": "ch.sponsor_engaged", "level": "partial", "basis": "stated", "evidence": "The CMO championed the investment with the board but was not in the meeting; her expectations are relayed by the VP.", "quote": "Dana's question is always the same. When do we see it in the P&L." },
+    { "id": "ch.value_language", "level": "partial", "basis": "stated", "evidence": "The marketing leader cites attributed revenue; the analytics owner disputes it as non-incremental.", "quote": "Cart abandonment has driven two point one million in attributed revenue since June." },
+    { "id": "ch.multithreaded", "level": "partial", "basis": "stated", "evidence": "Marketing VP, analytics Director, and partner engaged; the paid media leader and finance are not.", "quote": "The paid media team reports to a different VP" },
+    { "id": "ch.sponsor_stability", "level": "strong", "basis": "inferred", "evidence": "No sponsor turnover mentioned. The CMO is assumed stable in role.", "quote": "" },
+    { "id": "roi.objectives_defined", "level": "strong", "basis": "stated", "evidence": "Three objectives confirmed, including repeat purchase from 31% to 36% and a 15% retargeting reduction.", "quote": "Grow repeat purchase rate from thirty-one percent to thirty-six percent." },
+    { "id": "roi.kpis_baselined", "level": "partial", "basis": "stated", "evidence": "Repeat purchase has a finance-seen FY24 baseline; owned-channel revenue and retargeting spend do not.", "quote": "The thirty-one percent baseline is solid. That's FY24, from our customer file, finance has seen it." },
+    { "id": "roi.outcomes_evidenced", "level": "absent", "basis": "stated", "evidence": "Only last-touch attributed revenue from the journey dashboard; no holdout, so incremental impact is unknown.", "quote": "We never set up a holdout group, so we can't say what's incremental." },
+    { "id": "roi.customer_owned", "level": "partial", "basis": "stated", "evidence": "The marketing leader tells the story, but analytics disputes it and finance has not been engaged.", "quote": "If I put two point one million in front of finance, the first question is \"compared to what,\" and I don't have an answer." },
+    { "id": "ad.breadth", "level": "partial", "basis": "stated", "evidence": "Online behavior and ecommerce orders are ingested; loyalty and in-store POS data are not, and stores are about 70% of revenue.", "quote": "Seventy percent of your revenue is in stores, so without POS data the profile is missing most of the customer." },
+    { "id": "ad.depth", "level": "partial", "basis": "stated", "evidence": "Two of four priority journeys are live; cross-sell is in QA and loyalty win-back is blocked.", "quote": "Journey Optimizer is live for two journeys" },
+    { "id": "ad.blockers", "level": "absent", "basis": "stated", "evidence": "POS export dependency, unconfigured analytics workspace, partner SOW ending in six weeks, and only two trained journey builders.", "quote": "with our SOW ending in six weeks, I don't think we finish it plus the POS ingestion. We'd need a change order." },
+    { "id": "en.cadence", "level": "unknown", "basis": "none", "evidence": "", "quote": "" },
+    { "id": "en.initiative", "level": "strong", "basis": "stated", "evidence": "Customer stakeholders challenge each other and the numbers, and commit to specific next steps.", "quote": "I'd add, we also need to agree who owns measurement." },
+    { "id": "en.expansion", "level": "partial", "basis": "stated", "evidence": "Interest is focused on finishing planned journeys, not new capabilities; headcount is constrained until Q2.", "quote": "Win-back was supposed to be the big one." },
+    { "id": "vr.attribution", "level": "absent", "basis": "stated", "evidence": "Finance has not accepted any outcome figure, and the customer's own analytics lead disputes the attributed revenue.", "quote": "I'd want finance to agree to the method before we start, not after." }
+  ],
+  "maturity": { "stage": 2, "rationale": "Two priority journeys are live and reaching customers, but no incremental outcome is measured. Reaching Measured requires POS data in the profile, the analytics workspace configured, and a finance-agreed holdout method." },
+  "keyPlayers": [
+    { "name": "Dana Whitfield", "title": "Chief Marketing Officer", "role": "Executive sponsor", "side": "customer", "stance": "unknown", "missing": true, "note": "Championed the investment with the board; not in this meeting; board review in February." },
+    { "name": "Olivia Grant", "title": "VP, Lifecycle Marketing", "role": "Customer marketing lead", "side": "customer", "stance": "engaged", "note": "Can secure time with the CMO." },
+    { "name": "Ben Toller", "title": "Director, Marketing Analytics", "role": "Customer analytics owner", "side": "customer", "stance": "engaged", "note": "Proposed owner of the measurement framework." },
+    { "name": "Raj Patel", "title": "Engagement Lead, Brightpath Digital", "role": "Implementation partner", "side": "partner", "stance": "engaged", "note": "SOW ends in six weeks; change order needed." },
+    { "name": "Kendra Walsh", "title": "Adobe CSM", "role": "Adoption and product health", "side": "vendor", "stance": "engaged", "note": "Flagged key-person risk on journey building." },
+    { "name": "Not named", "title": "VP over paid media", "role": "Owner of retargeting objective", "side": "customer", "stance": "unknown", "missing": true, "note": "Objective three has no owner on the paid side." },
+    { "name": "Not named", "title": "Finance partner", "role": "Value validator", "side": "customer", "stance": "unknown", "missing": true, "note": "Must agree the holdout method in advance." }
+  ],
+  "objectives": [
+    { "id": "obj1", "text": "Grow repeat purchase rate from 31% to 36%", "basis": "stated" },
+    { "id": "obj2", "text": "Grow owned-channel (email and SMS) revenue", "basis": "stated" },
+    { "id": "obj3", "text": "Reduce retargeting spend by 15% using suppression audiences", "basis": "stated" }
+  ],
+  "kpis": [
+    { "name": "Repeat purchase rate", "objective": "obj1", "baseline": "31% (FY24, finance has seen)", "target": "36%", "current": null, "measurement": "not_measured", "source": "Customer Journey Analytics (not configured); needs POS data", "basis": "stated", "note": "Cannot be calculated cleanly without store transactions tied to profiles." },
+    { "name": "Cart abandonment attributed revenue", "objective": "obj2", "baseline": null, "target": null, "current": "$2.1M since June (last touch, 7-day window)", "measurement": "estimated", "source": "Journey Optimizer dashboard", "basis": "stated", "note": "Not incremental; no holdout." },
+    { "name": "Cart abandonment incremental lift vs holdout", "objective": "obj2", "baseline": null, "target": null, "current": null, "measurement": "not_measured", "source": "Proposed 5% holdout from early January", "basis": "stated", "note": "Method must be agreed with finance first." },
+    { "name": "Retargeting spend", "objective": "obj3", "baseline": null, "target": "-15%", "current": null, "measurement": "not_measured", "source": "Paid media team and agency", "basis": "stated", "note": "No owner on the paid side." }
+  ],
+  "useCases": [
+    { "name": "Cart abandonment journey", "status": "live", "evidence": "Live since June." },
+    { "name": "New customer welcome series", "status": "live", "evidence": "Live since August." },
+    { "name": "Post-purchase cross-sell", "status": "in_progress", "evidence": "Built and in QA." },
+    { "name": "Loyalty win-back", "status": "blocked", "evidence": "Loyalty and in-store POS data not ingested; depends on POS vendor export." }
+  ],
+  "risks": [
+    { "text": "February board review without an outcome finance will accept.", "pillar": "roi", "severity": "high", "basis": "stated" },
+    { "text": "Partner SOW ends in six weeks with POS ingestion and analytics configuration incomplete.", "pillar": "adoption", "severity": "high", "basis": "stated" },
+    { "text": "The biggest repeat-purchase lever (loyalty win-back) is blocked on store data.", "pillar": "adoption", "severity": "high", "basis": "stated" },
+    { "text": "Only two people can build journeys; no new headcount before Q2.", "pillar": "adoption", "severity": "medium", "basis": "stated" },
+    { "text": "Measurement ownership is unclear between analytics, partner, and dashboard.", "pillar": "roi", "severity": "medium", "basis": "stated" }
+  ],
+  "opportunities": [
+    { "text": "A 5% holdout from early January could produce a readable incremental result before the board review.", "pillar": "roi", "basis": "stated" },
+    { "text": "Finance has already seen the repeat purchase baseline, so the core objective is credible once measured.", "pillar": "roi", "basis": "stated" },
+    { "text": "Entitlement utilization at about 70% leaves room to grow once store data lands.", "pillar": "adoption", "basis": "inferred" }
+  ],
+  "actions": [
+    { "action": "Name the measurement owner and agree the holdout method with finance", "detail": "Analytics owner leads the measurement framework; finance signs off on a 5% cart abandonment holdout before it starts in early January.", "ownerRole": "Customer Analytics Owner", "timeframe": "Within 2 weeks", "priority": "high", "addresses": ["roi.outcomes_evidenced", "vr.attribution"] },
+    { "action": "Scope a change order for POS ingestion and analytics configuration", "detail": "Estimate cost and timing so the CMO can decide before the SOW ends.", "ownerRole": "Implementation Partner", "timeframe": "By next Friday", "priority": "high", "addresses": ["ad.blockers", "ad.breadth"] },
+    { "action": "Brief the CMO on the value plan", "detail": "Fifteen minutes in the next two weeks: what is live, what is measured, the three gaps, and the decision needed on the change order.", "ownerRole": "Value Realization Advisor", "timeframe": "Within 2 weeks", "priority": "high", "addresses": ["ch.sponsor_engaged"] },
+    { "action": "Engage the paid media owner on objective three", "detail": "Identify the owner, capture a retargeting spend baseline, and agree whether the objective stays in scope for this year.", "ownerRole": "Customer Marketing Lead", "timeframe": "Within 30 days", "priority": "medium", "addresses": ["ch.multithreaded", "roi.kpis_baselined"] },
+    { "action": "Reduce journey-builder key-person risk", "detail": "Enroll a third team member in journey building enablement.", "ownerRole": "Adobe CSM", "timeframe": "Within 30 days", "priority": "medium", "addresses": ["ad.blockers"] },
+    { "action": "Reframe current revenue reporting as directional", "detail": "Present the $2.1M as last-touch attributed and directional until the holdout reads out, so credibility with finance is protected.", "ownerRole": "Value Realization Advisor", "timeframe": "Immediately", "priority": "medium", "addresses": ["roi.customer_owned"] }
+  ],
+  "valueNarrative": {
+    "statedFacts": [
+      "Real-Time CDP is implemented with about 18 million profiles against a 25 million entitlement.",
+      "Cart abandonment (since June) and new customer welcome (since August) journeys are live.",
+      "The journey dashboard shows $2.1M last-touch attributed revenue from cart abandonment since June; incremental impact is unmeasured.",
+      "Repeat purchase baseline is 31% (FY24) against a 36% target; no current value is available."
+    ],
+    "draft": "Marlow & Finch has the foundation in place: a unified profile for about 18 million customers and two journeys live. The journey dashboard shows $2.1M in last-touch attributed revenue from cart abandonment, which we treat as directional until a holdout measures what is incremental. The objective that matters most, repeat purchase from 31% to 36%, cannot be measured until store data is in the profile. The plan below closes those gaps before the February board review.",
+    "caveats": ["$2.1M is last-touch attributed, not incremental.", "No current repeat purchase rate is available."]
+  },
+  "projection": { "direction": "negative", "text": "If nothing changes, the partner rolls off with store data and measurement unfinished, the board sees attributed numbers finance will not accept, and the investment is judged on delivery activity rather than outcomes going into renewal." },
+  "missingInformation": [
+    { "question": "When can the POS vendor deliver the loyalty and store transaction export?", "why": "Blocks win-back and repeat purchase measurement.", "relatesTo": "ad.blockers" },
+    { "question": "What does the change order cost, and who approves it?", "why": "Determines whether the gaps close before the board review.", "relatesTo": "ad.blockers" },
+    { "question": "What is the current retargeting spend and who owns it?", "why": "Objective three has no baseline or owner.", "relatesTo": "roi.kpis_baselined" },
+    { "question": "Will finance accept a 5% holdout over six weeks?", "why": "Determines whether an incremental result is credible.", "relatesTo": "vr.attribution" },
+    { "question": "What is the regular cadence with the CMO?", "why": "Executive engagement cadence is not evidenced.", "relatesTo": "en.cadence" }
+  ],
+  "assumptions": ["The CMO is assumed stable in role; no turnover was mentioned."]
+}

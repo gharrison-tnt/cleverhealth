@@ -1,0 +1,62 @@
+{
+  "id": "default-b2b-saas",
+  "label": "B2B SaaS (default)",
+  "fictional": true,
+  "company": {
+    "name": "Fieldstone Systems",
+    "industry": "Enterprise B2B SaaS",
+    "productCategory": "Workflow automation and operational analytics platform",
+    "description": "Fictional vendor used for demonstration. Sells a subscription platform that automates operational workflows and reports on process performance for mid-market and enterprise customers."
+  },
+  "customerSegments": ["Mid-market", "Enterprise", "Strategic"],
+  "customerObjectives": [
+    "Reduce cycle time on core operational processes",
+    "Lower cost to serve",
+    "Improve service levels and customer experience",
+    "Give leadership reliable operational reporting"
+  ],
+  "lifecycle": ["Onboard", "Adopt", "Realize value", "Renew", "Expand"],
+  "signals": {
+    "adoption": ["Weekly active users vs licensed seats", "Workflows live in production", "Teams or regions rolled out", "Reports used in operating reviews"],
+    "engagement": ["Meeting cadence held", "Executive attendance", "Customer-raised requests", "Response time to outreach"]
+  },
+  "kpis": ["Gross revenue retention", "Net revenue retention", "Time to first value", "Seat utilization", "Customer-reported outcome attainment"],
+  "operatingModel": {
+    "summary": "Pooled CSM coverage for mid-market; named CSM plus delivery lead for enterprise. AEs own commercial motions; solutions engineers own technical design.",
+    "roles": [
+      { "id": "csm", "label": "CSM", "side": "vendor", "owns": "Relationship, success plan, health, renewal readiness" },
+      { "id": "ae", "label": "Account Executive", "side": "vendor", "owns": "Commercial terms, expansion, renewal negotiation" },
+      { "id": "se", "label": "Solutions Engineer", "side": "vendor", "owns": "Technical design, integrations, architecture reviews" },
+      { "id": "delivery", "label": "Delivery Lead", "side": "vendor", "owns": "Implementation milestones and rollout" },
+      { "id": "vendor_exec", "label": "Vendor Executive Sponsor", "side": "vendor", "owns": "Executive alignment and escalations" },
+      { "id": "customer_champion", "label": "Customer Champion", "side": "customer", "owns": "Internal advocacy, adoption, and data access" },
+      { "id": "customer_exec", "label": "Customer Executive Sponsor", "side": "customer", "owns": "Business objectives, budget, and internal priority" }
+    ]
+  },
+  "dataSources": ["CRM", "Product telemetry", "Call transcripts", "Success plans", "Support tickets"],
+  "contractBands": [
+    { "id": "lt100k", "label": "Under $100K", "max": 100000 },
+    { "id": "100k-500k", "label": "$100K to $500K", "min": 100000, "max": 500000 },
+    { "id": "500k-2m", "label": "$500K to $2M", "min": 500000, "max": 2000000 },
+    { "id": "gt2m", "label": "Above $2M", "min": 2000000 }
+  ],
+  "terminology": {
+    "useCase": "use case",
+    "useCases": "Use cases",
+    "actionPlan": "Action Plan",
+    "advisor": "CSM"
+  },
+  "maturityStages": [
+    { "stage": 1, "name": "Activated", "definition": "Platform live, initial users onboarded, first workflows configured." },
+    { "stage": 2, "name": "Adopting", "definition": "Core use cases embedded in daily work across the intended teams." },
+    { "stage": 3, "name": "Realizing value", "definition": "Business outcomes measured against baselines and recognized by leadership." },
+    { "stage": 4, "name": "Expanding", "definition": "New teams, regions, or capabilities in motion; reference-worthy." }
+  ],
+  "indicatorOverrides": {},
+  "assessmentGuidance": "Customers buy Fieldstone to improve operational processes. Value is usually expressed as cycle time, throughput, error rates, cost to serve, or service levels. Seat utilization alone is not value.",
+  "sampleTranscripts": [
+    { "label": "Implementation review (Halden Freight)", "path": "data/demo/transcripts/t2-halden-implementation-review.txt", "accountId": "halden" },
+    { "label": "Executive business review (Crestview Mutual)", "path": "data/demo/transcripts/t1-crestview-ebr.txt", "accountId": "crestview" },
+    { "label": "At-risk conversation (Sagebrook Health)", "path": "data/demo/transcripts/t3-sagebrook-at-risk.txt", "accountId": "sagebrook" }
+  ]
+}

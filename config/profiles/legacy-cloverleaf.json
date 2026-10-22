@@ -1,0 +1,53 @@
+{
+  "id": "legacy-cloverleaf",
+  "label": "Legacy: original GovTech sales intelligence prototype",
+  "fictional": true,
+  "hidden": true,
+  "exampleNote": "Archived configuration from the original prototype. Not part of the default experience; reachable only with ?profile=legacy-cloverleaf.",
+  "company": {
+    "name": "Cloverleaf AI",
+    "industry": "GovTech sales intelligence",
+    "productCategory": "Government meeting intelligence and early sales signals",
+    "description": "Monitors public government meetings and delivers early buying signals, decision-maker profiles, and competitive intel to GovTech vendors' sales teams."
+  },
+  "customerSegments": ["GovTech vendors under $30K", "GovTech vendors $30K to $60K", "GovTech vendors above $60K"],
+  "customerObjectives": ["Source pipeline before RFPs go public", "Build relationships with decision-makers early"],
+  "lifecycle": ["Activate", "Convert", "Embed", "Expand"],
+  "signals": {
+    "adoption": ["Reps acting on alerts", "Meeting intelligence used in outreach", "Speaker ID used to track decision-makers"],
+    "engagement": ["VP of Sales attendance", "Customer talk ratio", "New territories requested"]
+  },
+  "kpis": ["Deals sourced from signals", "Pipeline influenced"],
+  "operatingModel": {
+    "summary": "CSM-led with Sales support.",
+    "roles": [
+      { "id": "csm", "label": "CSM", "side": "vendor", "owns": "Relationship and adoption" },
+      { "id": "sales", "label": "Sales", "side": "vendor", "owns": "Commercial" },
+      { "id": "customer", "label": "Customer", "side": "customer", "owns": "Internal adoption" }
+    ]
+  },
+  "dataSources": ["Call transcripts"],
+  "contractBands": [
+    { "id": "under30k", "label": "Under $30K", "max": 30000 },
+    { "id": "30-60k", "label": "$30K to $60K", "min": 30000, "max": 60000 },
+    { "id": "above60k", "label": "Above $60K", "min": 60000 }
+  ],
+  "terminology": { "useCase": "use case", "useCases": "Use cases", "actionPlan": "Attack Plan", "advisor": "CSM" },
+  "maturityStages": [
+    { "stage": 1, "name": "Activated", "definition": "Basic setup, alerts configured, some logins." },
+    { "stage": 2, "name": "Converting", "definition": "At least one deal sourced from intel; reps acting on signals." },
+    { "stage": 3, "name": "Embedded", "definition": "Part of the sales workflow; leadership engaged; CRM integration." },
+    { "stage": 4, "name": "Expanding", "definition": "New territories, verticals, or features; reference-worthy." }
+  ],
+  "indicatorOverrides": {
+    "ch.sponsor_engaged": { "label": "Sales leader engaged", "definition": "A VP, Director, or C-level sales leader appears and engages." },
+    "ad.depth": { "label": "Reps act on alerts", "definition": "Reps act on alerts and use meeting intelligence in outreach, not just receive digests." },
+    "roi.outcomes_evidenced": { "label": "Deals sourced", "definition": "Specific deals or pipeline traced to a government meeting or alert. GovTech cycles run 12 to 24 months, so early signals acted on count." }
+  },
+  "assessmentGuidance": "ROI is measured in deals sourced from signals, pipeline influenced, and relationships built before procurement starts.",
+  "sampleTranscripts": [
+    { "label": "Legacy sample: At risk", "path": "data/legacy/transcripts/atRisk.txt" },
+    { "label": "Legacy sample: Healthy", "path": "data/legacy/transcripts/healthy.txt" },
+    { "label": "Legacy sample: Ghost account", "path": "data/legacy/transcripts/ghost.txt" }
+  ]
+}

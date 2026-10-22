@@ -1,0 +1,67 @@
+{
+  "id": "martech-adobe-example",
+  "label": "Enterprise MarTech: Adobe Experience Cloud example",
+  "fictional": true,
+  "isExample": true,
+  "exampleNote": "One example of applying the methodology to an enterprise MarTech investment. All customers, people, and figures are fictional. Nothing here describes a real Adobe customer.",
+  "company": {
+    "name": "Adobe Experience Cloud (illustrative)",
+    "industry": "Enterprise marketing technology",
+    "productCategory": "Customer data, journey orchestration, analytics, and personalization",
+    "description": "Illustrative profile for a value realization practice supporting enterprise customers of Adobe Experience Cloud products such as Real-Time CDP, Journey Optimizer, Customer Journey Analytics, and Target."
+  },
+  "customerSegments": ["Enterprise retail", "Financial services", "Travel and hospitality", "Media"],
+  "customerObjectives": [
+    "Grow repeat purchase and customer lifetime value",
+    "Increase owned-channel (email, SMS, app) attributed revenue",
+    "Reduce paid media waste through better audiences",
+    "Personalize experiences across channels"
+  ],
+  "lifecycle": ["Implement", "Activate journeys", "Measure", "Optimize", "Renew and expand"],
+  "signals": {
+    "adoption": ["Priority journeys live in production", "Audiences activated to channels", "Profile count vs entitlement", "Data sources ingested into unified profile", "Experiments running"],
+    "engagement": ["Value review cadence", "CMO or VP attendance", "Partner and internal team alignment", "Roadmap requests from customer"]
+  },
+  "kpis": ["Repeat purchase rate", "Owned-channel attributed revenue (incremental)", "Paid media efficiency", "Journey conversion vs holdout", "Time to launch a new journey"],
+  "operatingModel": {
+    "summary": "Value Realization Advisor leads the outcome framework and executive value story. Adobe CSM owns adoption and product health. Implementation partner owns delivery. Customer owns data, measurement, and business decisions.",
+    "roles": [
+      { "id": "vra", "label": "Value Realization Advisor", "side": "vendor", "owns": "Outcome framework, KPI baselines, executive value story" },
+      { "id": "csm", "label": "Adobe CSM", "side": "vendor", "owns": "Adoption plan, product health, enablement, escalations" },
+      { "id": "ae", "label": "Account Executive", "side": "vendor", "owns": "Commercial terms, renewal, expansion" },
+      { "id": "partner", "label": "Implementation Partner", "side": "partner", "owns": "Delivery workstreams, technical build, data integration" },
+      { "id": "customer_marketing", "label": "Customer Marketing Lead", "side": "customer", "owns": "Journey priorities, campaign execution, marketing KPIs" },
+      { "id": "customer_analytics", "label": "Customer Analytics Owner", "side": "customer", "owns": "Measurement design, attribution, reporting to finance" },
+      { "id": "customer_exec", "label": "Customer Executive Sponsor", "side": "customer", "owns": "Business case, budget, cross-functional priority" }
+    ]
+  },
+  "dataSources": ["Product usage and entitlement reports", "Journey performance dashboards", "Customer analytics", "Partner status reports", "Call transcripts"],
+  "contractBands": [
+    { "id": "lt1m", "label": "Under $1M", "max": 1000000 },
+    { "id": "1m-3m", "label": "$1M to $3M", "min": 1000000, "max": 3000000 },
+    { "id": "3m-8m", "label": "$3M to $8M", "min": 3000000, "max": 8000000 },
+    { "id": "gt8m", "label": "Above $8M", "min": 8000000 }
+  ],
+  "terminology": {
+    "useCase": "journey",
+    "useCases": "Priority journeys",
+    "actionPlan": "Value Plan",
+    "advisor": "Value Realization Advisor"
+  },
+  "maturityStages": [
+    { "stage": 1, "name": "Implemented", "definition": "Core products provisioned; data ingestion and first audiences in place." },
+    { "stage": 2, "name": "Activated", "definition": "Priority journeys live in production and reaching customers." },
+    { "stage": 3, "name": "Measured", "definition": "Incremental outcomes measured with agreed baselines and holdouts." },
+    { "stage": 4, "name": "Optimized", "definition": "Continuous testing, expanding journeys, and value recognized in the P&L." }
+  ],
+  "indicatorOverrides": {
+    "ad.depth": { "label": "Priority journeys live", "definition": "Priority marketing journeys are live in production and reaching customers, not stuck in build or QA." },
+    "ad.breadth": { "label": "Data and channel coverage", "definition": "Key data sources are ingested into the unified profile and audiences reach the intended channels." },
+    "ad.utilization": { "label": "Entitlement utilization", "definition": "Share of contracted profile or usage entitlement in active use." },
+    "roi.outcomes_evidenced": { "label": "Incremental outcomes evidenced", "definition": "Outcomes are measured as incremental (holdout or agreed attribution), not only platform-reported last touch." }
+  },
+  "assessmentGuidance": "Distinguish technical delivery (configured, ingested, built) from activation (live to customers) and from measured incremental outcomes. Platform-reported attributed revenue without a holdout or agreed attribution method is an estimate, not a measured outcome. Note where finance has or has not accepted the numbers.",
+  "sampleTranscripts": [
+    { "label": "Value realization review (Marlow & Finch)", "path": "data/demo/transcripts/t4-marlow-finch-value-review.txt", "accountId": "marlow-finch" }
+  ]
+}

@@ -1,0 +1,58 @@
+FICTIONAL DEMONSTRATION TRANSCRIPT. All people, companies, and figures are invented.
+
+Crestview Mutual Insurance | Executive Business Review
+Participants: Elaine Porter (SVP, Claims, Crestview), Tom Akers (Director, Claims Operations, Crestview), Jordan Lee (CSM, Fieldstone Systems)
+
+Jordan: Thanks, both of you, for the time. Elaine, I know your calendar is brutal this month. I put together a short deck but honestly I'd rather make this a conversation. Where do you want to start?
+
+Elaine: Let me start, because I want to be direct about why I asked for this. We go into budget review with our CFO in about sixty days. Every vendor over half a million is getting a line-by-line. And he asked me last week, point blank, what did we get for the six hundred and eighty thousand we spend on Fieldstone. And I didn't have a good answer. I had a feeling, but I didn't have an answer.
+
+Jordan: That's fair, and I'm glad you said it plainly. What's the feeling?
+
+Elaine: The feeling is that the adjusters like it. Nobody's asking to go back to the old queue. Tom, you'd know better than me on the detail.
+
+Tom: Yeah, usage isn't the problem. We've got roughly eleven hundred adjusters on it. The weekly active number Jordan sends us is around eighty-five percent. We've got, what, thirty-some automated workflows now? First notice of loss routing, the subrogation flags, the document chase on auto claims. Those are running every day. If we turned it off tomorrow there would be a riot on the floor.
+
+Jordan: The thirty-four workflows are all in production, and the FNOL routing one alone touches every new auto and property claim.
+
+Elaine: Right. But "there'd be a riot" is not something I can put in front of the CFO.
+
+Jordan: Understood. When we did the original business case, the goal we wrote down was reducing claims cycle time and cutting the manual touches per claim. Tom, do you have the cycle time trend?
+
+Tom: That's the problem. We don't have a clean before. When we launched, the claims system was in the middle of its own upgrade, and the reporting team, honestly, was two people. One of them, Priya, owned the cycle time dashboard, and she left in the spring. So the number we have today, average cycle time on auto physical damage is about eleven days, I think, but I couldn't tell you with a straight face what it was before we went live. People say it was worse. I believe them. I can't prove it.
+
+Elaine: And there's a second issue. The reports we get from your platform are about the platform. Workflow volumes, tasks completed, time in queue. That's useful for Tom. It's not useful for me. I need it in claims terms. Cost per claim, cycle time, leakage, customer complaints.
+
+Jordan: That's a really important distinction, and I think we've been sending you the wrong kind of report. Who owns the claims data warehouse today?
+
+Tom: IT does. Specifically a team under the CIO. They're not unfriendly, they're just buried. We put in a request for a historical extract in, I want to say, July. It's still in the queue.
+
+Elaine: Let me say the other thing out loud too. Our core claims system vendor has been in my office twice offering a bundle. They say they can do eighty percent of what you do inside their suite for a lot less. I don't fully believe the eighty percent. But if I can't show value, a cheaper "good enough" wins that conversation.
+
+Jordan: I appreciate you telling me that. Can I ask what you'd need to see to feel confident walking into the CFO meeting?
+
+Elaine: Three things. A before and after on cycle time for at least one line of business. Something on cost per claim or adjuster capacity, because that's how he thinks. And I need it to come from our data, not your marketing slides.
+
+Tom: For what it's worth, I think the subrogation flags might be the easiest win to prove. That workflow catches recovery opportunities that used to slip. The recovery team said they've seen more referrals. I just don't know how many, or what they're worth.
+
+Jordan: That's a good lead. Elaine, would you be open to us doing a structured value assessment over the next four weeks? We'd need two things from Crestview: the historical extract from IT, even a partial one, and maybe an hour with someone in finance so we use their numbers for cost per claim.
+
+Elaine: I can push the IT request. I'll talk to the CIO's chief of staff this week. Finance, I'll get you someone. Probably not the CFO.
+
+Tom: I can pull together what the recovery team has on subrogation referrals. It's probably a spreadsheet somewhere.
+
+Jordan: Great. And Elaine, would you want us to bring someone senior from Fieldstone into the readout? Not to sell, just so there's executive accountability on our side too.
+
+Elaine: Sure, that's fine. But I want the numbers first. I don't want a dinner, I want a defensible page.
+
+Jordan: Understood. One more question. Are there other parts of claims that have asked about the platform? I'd heard commercial lines might be interested.
+
+Elaine: They asked. I told them not until I can answer the CFO's question. I'm not expanding something I can't defend.
+
+Tom: The commercial team keeps emailing me, for the record.
+
+Elaine: I know. Let's walk before we run.
+
+Jordan: Makes sense. I'll send a summary today with the three outputs you named and the asks on each side. Renewal is in March, so the timing actually works if we start now.
+
+Elaine: It works if we start now. It doesn't work if this slips into January.

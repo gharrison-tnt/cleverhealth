@@ -1,0 +1,62 @@
+FICTIONAL DEMONSTRATION TRANSCRIPT. All people, companies, and figures are invented.
+
+Halden Freight Systems | Adoption and Implementation Review
+Participants: Priya Raman (Director, Operations Systems, Halden), Marcus Bell (VP, Network Operations, Halden), Dana Ortiz (Delivery Lead, Fieldstone Systems), Sam Whitaker (CSM, Fieldstone Systems)
+
+Sam: Okay, I think we have everyone. Marcus, thanks for joining. I know you only had thirty minutes so we'll keep it tight. Dana's going to cover the rollout status, then I'd love to spend most of the time on what you want to show your COO in January.
+
+Marcus: Perfect. And yes, I'll probably drop at the half hour.
+
+Dana: So, quick status. Dock scheduling automation is live in three of the four regions: Midwest, Southeast, and Gulf. That's thirty-one of the forty-four facilities. Weekly active users are four hundred and twelve against four hundred and eighty licensed, so a little under ninety percent. The exception workflow for missed appointments went live in September and it's being used in all three regions.
+
+Priya: And the Midwest team has basically taken over the exception workflow and made it their own. They added two steps we didn't design. Which, fine, as long as they tell us.
+
+Dana: They did tell us, for the record. The open item is Canada. The SSO integration with their identity provider is still failing on group mapping. It's an issue on the Canadian side's directory structure, we think, but we need their IT to confirm. We've been waiting on a ticket for about three weeks.
+
+Priya: That's on me to chase. Their IT lead is new, and I think the ticket landed with the wrong person. I'll get it escalated this week.
+
+Marcus: How much does Canada slip if that doesn't land?
+
+Dana: If we have SSO by mid-November we can still go live before your peak freeze on the fifteenth... actually, no, we'd be cutting it close. Realistically, if it isn't resolved by November first, I'd plan Canada for January.
+
+Marcus: I'd rather do January cleanly than rush it in during peak. Let's assume January.
+
+Sam: Okay. Marcus, on the results side. Priya shared the TMS data with us last week. Do you want to talk through it or should I?
+
+Marcus: You go, I'll interrupt.
+
+Sam: So in the three live regions, average dock dwell time was two point six hours in the quarter before go-live. Over the last ninety days it's averaged one point nine hours. That's from your TMS, not from us. On-time pickup went from eighty-eight percent to ninety-three percent in the same regions.
+
+Marcus: And that's the number I care about, the on-time pickup. That's what our shippers measure us on. Two of our biggest accounts have mentioned it in their quarterly reviews with us. Unprompted.
+
+Priya: I'd add one caveat. September and October were lighter volume than the baseline quarter. So some of the dwell improvement could be volume. I don't think it's most of it, but I want to be honest.
+
+Sam: That's a fair caveat. Would it help to compare against the same quarter last year, so volume is closer?
+
+Priya: Yes, I can pull that.
+
+Marcus: Here's what I need for the COO. He's going to ask me what it's worth in dollars. Our finance team has a rough number for what an hour of dwell costs us, but they haven't signed off on using it. I don't want to walk in with a number finance will throw out.
+
+Sam: Totally agree. So the plan would be: Priya pulls the year-over-year comparison, we get finance to confirm the cost-per-dwell-hour figure, and we build one page together. Your data, your numbers.
+
+Marcus: Good. And one thing I'd like to understand. The yard management module. We've had a lot of trouble with trailer visibility in the Gulf yards. Is that something we could pilot?
+
+Sam: It is. I'd want to bring in our solutions engineer to scope it properly. I'd also suggest we don't start a pilot until Canada is live, so we don't stretch Priya's team.
+
+Priya: Thank you. Yes. Please.
+
+Marcus: That's fine. Scope it, but no pilot before February.
+
+Sam: One more thing. Marcus, I know Ray in the Southeast region has been less enthusiastic.
+
+Marcus: Ray thinks it's a lot of clicks. He's not wrong on two of the screens. But his region's numbers improved too, so I'll handle Ray.
+
+Dana: We have a fix for one of those screens in the next release. I'll share it with Priya.
+
+Marcus: Great. I've got to jump. Priya's my point on all of this. Sam, put the COO readout on my calendar for the second week of January.
+
+Sam: Will do. Thanks, Marcus.
+
+Priya: Okay, so for the rest of the time, can we go through the Canada cutover plan?
+
+Dana: Yes. Let's do it.
