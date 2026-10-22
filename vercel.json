@@ -1,8 +1,0 @@
-{
-  "functions": {
-    "api/analyze.js": {
-      "memory": 512,
-      "maxDuration": 60
-    }
-  }
-}
